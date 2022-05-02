@@ -1,0 +1,44 @@
+﻿forage.species,common.name,plant.family,affinis,auricomus,bimaculatus,borealis,fervidus,griseocollis,impatiens,pensylvanicus,perplexus,ternarius,terricola,vagans
+Anemone,anemone,Ranunculaceae,0,0,0,0,0,0,0,0,0,0,2,0
+Barbarea vulgaris,bittercress,Brassicaceae,0,0,0,0,0,0,0,0,0,0,5,0
+Ceanothus,California lilac,Rhamnaceae,0,0,0,0,0,0,0,0,0,1,0,0
+Centaurea,knapweed,Asteraceae,1,0,0,2,0,3,8,1,0,0,0,3
+Cichorium,chicory,Asteraceae,0,0,0,0,0,0,21,0,0,0,0,0
+Cirsium,thistle,Asteraceae,1,8,0,5,1,2,3,7,0,0,0,3
+Cornus,dogwood,Cornaceae,0,0,0,1,0,0,0,0,0,0,0,0
+Daucus,wild carrot,Apiaceae,5,0,0,0,0,2,4,0,0,0,0,0
+Desmodium,tick-trefoil,Fabaceae,0,0,0,0,0,0,0,2,0,0,0,0
+Epilobium,willowherb,Onagraceae,0,0,0,0,0,0,0,0,1,0,0,0
+Hydrophyllum,waterleaf,Boraginaceae,0,0,2,0,0,0,0,0,0,0,0,0
+Hypericum,St. John's wort,Hypericaceae,3,0,1,1,5,4,0,4,4,2,3,7
+Impatiens,jewelweed,Balsaminaceae,0,0,0,1,0,0,0,0,0,0,0,0
+Lathyrus,peavine,Fabaceae,0,2,0,0,0,0,0,1,0,0,0,0
+Lespedeza,bush clover,Fabaceae,0,0,0,0,2,0,0,0,0,0,0,0
+Lithospermum,stoneseed,Boraginaceae,2,0,0,0,0,0,0,0,0,0,0,0
+Lonicera,honeysuckle,Caprifoliaceae,4,0,1,0,0,0,0,0,5,0,4,0
+Lotus,bird's-foot trefoil,Fabaceae,0,0,0,0,0,4,0,0,0,0,0,0
+Medicago,alfalfa,Fabaceae,0,0,0,0,1,0,0,2,0,0,0,0
+Melilotus,sweet clover,Fabaceae,3,0,0,0,1,3,3,1,0,12,18,0
+Monarda,bee balm,Lamiaceae,0,10,0,1,3,1,2,0,0,1,0,5
+Parietaria,nettle,Urticaceae,0,0,0,0,0,0,0,0,1,0,0,0
+Pedicularis,lousewort,Orobanchaceae,0,0,1,0,0,0,0,0,0,0,0,0
+Plantago,plantain,Plantaginaceae,0,0,0,0,0,0,9,0,0,0,0,0
+Potentilla,cinquefoil,Rosaceae,0,0,0,0,0,0,0,0,0,2,1,0
+Prunus,cherry,Rosaceae,0,0,0,0,0,0,0,0,4,3,0,0
+Ranunculus,buttercup,Ranunculaceae,0,0,0,0,0,0,0,0,0,0,1,0
+Rhamnus,buckthorn,Rhamnaceae,0,0,2,0,0,0,0,0,0,0,0,0
+Rhus,sumac,Anacardiaceae,0,4,3,0,0,7,4,0,4,3,2,0
+Ribes,gooseberry,Grossulariaceae,0,0,0,0,0,0,0,0,1,0,0,0
+Rosa,rose,Rosaceae,0,1,5,0,0,0,0,0,1,0,0,0
+Rubus,raspberry,Rosaceae,0,0,4,2,0,2,4,0,10,8,4,7
+Salix,willow,Salicaceae,0,0,2,0,0,0,0,0,2,0,1,0
+Silene,campion,Caryophyllaceae,0,0,0,0,0,0,0,0,0,0,1,0
+Solanum,nightshade,Solanaceae,7,0,1,0,5,1,19,0,8,0,0,0
+Solidago,goldenrod,Asteraceae,12,0,0,0,0,0,8,0,1,8,7,1
+Spiraea,meadowsweet,Rosaceae,2,0,0,0,0,4,6,0,1,1,0,2
+Tilia,basswood,Malvaceae,1,0,0,0,0,0,0,0,0,0,0,0
+Trifolium pratense,red clover,Fabaceae,0,10,7,12,19,2,3,7,1,0,0,20
+Trifolium repens,white clover,Fabaceae,0,11,17,1,9,28,15,7,3,9,7,11
+Vaccinium,blueberry,Ericaceae,0,0,12,0,4,0,3,0,11,5,0,0
+Vicia,vetch,Fabaceae,0,7,7,10,9,6,0,7,0,1,0,2
+others,others,NA,5,1,13,1,7,19,33,2,4,8,9,15

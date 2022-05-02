@@ -693,7 +693,7 @@ txt.df <- df %>%
 
 specialization.plot <- df %>%
   ggplot(aes(x = simpson, y = PC1)) +
-  theme_minimal() +
+  theme_bw() +
   theme(legend.position="none") +
   geom_smooth(method=lm, color = "grey40", fill = "gray85") +
   geom_point(aes(color = species), alpha = 0.65, size = 2) +
