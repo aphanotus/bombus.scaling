@@ -1,0 +1,724 @@
+# Data provenance report
+
+ ## TPS file creation
+#
+Created by user `drangeli` with `borealis::create.tps` version 2021.3.2 on Sunday, 04 April 2021, 18:55:40
+#
+Input file:  Bombus.forewings.200711.curated.csv
+
+The dataset is 20 x 2 x 638 (*p* landmarks x *k* dimensions x *n* specimens)
+#
+Metadata are encoded in specimen ID lines from the following factors:
+- species
+- caste
+- digitizer
+- scale1
+- body
+- scale2
+- its
+#
+Metadata separator: __
+#
+**Scale** included and **inverted** from the original dataset.
+#
+
+
+## TPS data import
+
+Performed by user `drangeli` with `borealis::read.tps` version 2021.3.2 on Tuesday, 03 May 2022, 14:58:42
+
+Metadata were extracted from specimen ID lines for the following factors:
+- specimen.id
+- species
+- caste
+- digitizer
+- scale1
+- body
+- scale2
+- its
+
+
+## Reflection alignment
+
+Performed by user `drangeli` with `borealis::align.reflect` version 2021.3.2 on Tuesday, 03 May 2022, 14:59:01
+
+- top.pt = 1
+- bottom.pt = 20
+- left.pt = 13
+- right.pt = 1
+
+Specimens re-oriented: 638
+
+- DRA190815-001.vag.W Y-flipped
+- DRA190815-002.imp.W Y-flipped
+- DRA190815-003.imp.W Y-flipped
+- DRA190815-004.imp.W Y-flipped
+- DRA190805-005.vag.W Y-flipped
+- FJ190529-001.imp.W Y-flipped
+- FJ190716-008.bimac.W Y-flipped
+- FJ190718-001.vag.M Y-flipped
+- FJ190718-004.imp.W Y-flipped
+- FJ190724-003.terri.W Y-flipped
+- FJ190809-001.tern.W Y-flipped
+- FJ190809-002.tern.W Y-flipped
+- FJ190809-003.bor.W Y-flipped
+- FJ190809-004.tern.W Y-flipped
+- FJ190809-005.tern.W Y-flipped
+- FJ190809-006.tern.W Y-flipped
+- FJ190809-007.tern.W Y-flipped
+- FJ190809-008.tern.W Y-flipped
+- FJ190809-009.tern.W Y-flipped
+- FJ190809-010.tern.W Y-flipped
+- FJ190809-012.tern.W Y-flipped
+- FJ190809-013.tern.W Y-flipped
+- FJ190809-014.tern.W Y-flipped
+- FJ190814-001.bimac.M Y-flipped
+- FJ190814-002.imp.M Y-flipped
+- FJ190814-003.bimac.M Y-flipped
+- FJ190814-004.bimac.W Y-flipped
+- FJ190814-005.bimac.M Y-flipped
+- FJ190814-007.imp.W Y-flipped
+- FJ190814-009.bimac.W Y-flipped
+- FJ190822-001.imp.W Y-flipped
+- FJ190822-002.imp.W Y-flipped
+- FJ190822-003.imp.W Y-flipped
+- FJ190822-004.bimac.M Y-flipped
+- FJ190822-006.bimac.M Y-flipped
+- FJ190822-007.bimac.M Y-flipped
+- FJ190822-008.bimac.M Y-flipped
+- FJ190827-002.bor.W Y-flipped
+- FJ190827-003.vag.W Y-flipped
+- FJ190827-004.vag.W Y-flipped
+- FJ190827-005.bimac.M Y-flipped
+- FJ190827-007.bor.W Y-flipped
+- FJ190827-009.ferv.W Y-flipped
+- FJ190827-010.bimac.W Y-flipped
+- FJ190827-011.vag.W Y-flipped
+- FJ190827-012.sande.WQ Y-flipped
+- FJ190827-013.bimac.W Y-flipped
+- FJ190827-014.imp.W Y-flipped
+- FJ190827-015.imp.W Y-flipped
+- FJ190827-016.imp.W Y-flipped
+- FJ190827-017.ferv.W Y-flipped
+- FJ190827-017a.tern.W Y-flipped
+- FJ190827-018.tern.W Y-flipped
+- FJ190827-019.tern.W Y-flipped
+- FJ190828-001.imp.W Y-flipped
+- FJ190828-002.imp.W Y-flipped
+- FJ190828-003.imp.W Y-flipped
+- FJ190828-004.bimac.W Y-flipped
+- FJ190905-001.imp.W Y-flipped
+- FJ190905-002.imp.W Y-flipped
+- FJ190905-003.imp.W Y-flipped
+- JL190718-001.vag.M Y-flipped
+- JL190718-002.vag.M Y-flipped
+- JL190724-001.terri.W Y-flipped
+- JL190724-002.tern.W Y-flipped
+- JL190724-003.bimac.W Y-flipped
+- JL190724-005.tern.W Y-flipped
+- JL190731-001.imp.W Y-flipped
+- JL190731-002.imp.W Y-flipped
+- JL190731-003.imp.W Y-flipped
+- JL190731-004.bimac.W Y-flipped
+- JL190731-005.bimac.W Y-flipped
+- JL190806-001.vag.M Y-flipped
+- JL190806-002.bimac.M Y-flipped
+- JL190806-004.bimac.W Y-flipped
+- JL190806-005.imp.W Y-flipped
+- JL190806-006.imp.W Y-flipped
+- JL190806-007.imp.W Y-flipped
+- JL190806-008.bimac.W Y-flipped
+- JL190809-001.tern.W Y-flipped
+- JL190809-002.tern.W Y-flipped
+- JL190809-003.vag.W Y-flipped
+- JL190809-004.tern.W Y-flipped
+- JL190809-005.vag.W Y-flipped
+- JL190809-006.tern.W Y-flipped
+- JL190809-007.tern.W Y-flipped
+- JL190809-008.tern.W Y-flipped
+- JL190809-009.tern.W Y-flipped
+- JL190809-010.bimac.M Y-flipped
+- JL190809-011.bimac.M Y-flipped
+- JL190905-001.imp.M Y-flipped
+- JL190910-001.imp.W Y-flipped
+- PF190718-001.vag.W Y-flipped
+- PF190724-004.imp.W Y-flipped
+- PF190724-005.tern.W Y-flipped
+- PF190724-008.bimac.W Y-flipped
+- RGA190718-001.tern.W Y-flipped
+- TJ190529-001.imp.W Y-flipped
+- DRA190715-001.bimac.W Y-flipped
+- MY180615-005.tern.W Y-flipped
+- MY180615-006.terri.W Y-flipped
+- MY180615-009.bimac.W Y-flipped
+- MY180615-013.terri.W Y-flipped
+- MY180616-001.imp.Q Y-flipped
+- MY180616-002.bimac.W Y-flipped
+- MY180616-003.bimac.W Y-flipped
+- MY180616-003a.bimac.W Y-flipped
+- MY180616-004.tern.W Y-flipped
+- MY180814-001.bor.M Y-flipped
+- MY180814-003.vag.W Y-flipped
+- MY180814-009.vag.W Y-flipped
+- MY180814-011.bor.M Y-flipped
+- MY180814-012.vag.M Y-flipped
+- MY180814-013.vag.M Y-flipped
+- MY180814-014.tern.W Y-flipped
+- TWAB180607-002.bimac.Q Y-flipped
+- TWM180607-003.bimac.Q Y-flipped
+- TWM180615-001.tern.Q Y-flipped
+- TWM180615-004.tern.W Y-flipped
+- TWM180615-009.bimac.W Y-flipped
+- TWM180615-010.imp.Q Y-flipped
+- TWM180616-002.tern.Q Y-flipped
+- TWM180616-003.tern.Q Y-flipped
+- TWM180814-001.perp.M Y-flipped
+- TWM180814-014.vag.M Y-flipped
+- TWM180814-017.tern.W Y-flipped
+- TWM180814-018.tern.W Y-flipped
+- DMO180529-005.vag.W Y-flipped
+- DRA180523-003.imp.Q Y-flipped
+- DRA180529-012.vag.W Y-flipped
+- DRA180529-024.vag.W Y-flipped
+- DRA180607-001.imp.Q Y-flipped
+- DRA180623-001.imp.Q Y-flipped
+- DRA180623-002.imp.Q Y-flipped
+- DRA180814-001.vag.W Y-flipped
+- DRA180814-006.imp.W Y-flipped
+- DRA180814-006a.vag.W Y-flipped
+- FJ180603-006.bimac.W Y-flipped
+- TWM180614-150.rufo.W Y-flipped
+- TWM180614-160.terri.W Y-flipped
+- TWM180614-161.vag.W Y-flipped
+- TWM180614-163.vag.W Y-flipped
+- TWM180614-167.vag.W Y-flipped
+- TWM180614-170.rufo.W Y-flipped
+- TWM180615-006.terri.W Y-flipped
+- TWM180621-002.bimac.W Y-flipped
+- TWM180621-003.bimac.W Y-flipped
+- TWM180622-002.bimac.W Y-flipped
+- TWM180626-002.bimac.W Y-flipped
+- TWM180626-004.bimac.W Y-flipped
+- TWM180626-005.bimac.W Y-flipped
+- TWM180626-006.tern.W Y-flipped
+- TWM180626-007.tern.W Y-flipped
+- TWM180626-008.vag.W Y-flipped
+- TWM180626-009.vag.W Y-flipped
+- TWM180626-010.vag.W Y-flipped
+- TWM180629-001.bor.W Y-flipped
+- TWM180629-003.vag.W Y-flipped
+- TWM180629-005.tern.W Y-flipped
+- TWM180629-006.bimac.W Y-flipped
+- TWM180629-007.bimac.W Y-flipped
+- TWM180629-008.vag.W Y-flipped
+- TWM180629-009.vag.Q Y-flipped
+- TWM180703-001.terri.W Y-flipped
+- TWM180703-002.tern.W Y-flipped
+- TWM180703-003.tern.W Y-flipped
+- TWM180703-004.bor.W Y-flipped
+- TWM180703-005.bor.W Y-flipped
+- TWM180703-006.tern.W Y-flipped
+- MY180626-008.vag.W Y-flipped
+- MY180629-001.vag.W Y-flipped
+- MY180629-002.vag.W Y-flipped
+- MY180629-003.vag.W Y-flipped
+- MY180629-004.vag.W Y-flipped
+- MY180703-002.terri.W Y-flipped
+- MY180703-003.terri.W Y-flipped
+- AOI190709-001.ferv.W Y-flipped
+- AOI190715-001.imp.W Y-flipped
+- DRA180508-009.imp.Q Y-flipped
+- DRA180509-001.bimac.Q Y-flipped
+- DRA180509-002.bimac.Q Y-flipped
+- DRA180509-004.bimac.Q Y-flipped
+- DRA180509-005.imp.Q Y-flipped
+- DRA180509-006.vag.Q Y-flipped
+- DRA180509-007.vag.Q Y-flipped
+- DRA180509-008.bimac.Q Y-flipped
+- DRA180529-025.imp.Q Y-flipped
+- DRA180529-026.imp.Q Y-flipped
+- DRA180529-029.imp.Q Y-flipped
+- DRA180619-003.bor.Q Y-flipped
+- DRA180619-004.bimac.W Y-flipped
+- DRA180720-001.vag.W Y-flipped
+- DRA180720-002.vag.W Y-flipped
+- DRA180720-003.vag.W Y-flipped
+- DRA180720-004.vag.W Y-flipped
+- DRA180720-006.bimac.W Y-flipped
+- DRA180720-006.vag.W Y-flipped
+- DRA180720-007.bimac.M Y-flipped
+- DRA180720-008.bimac.M Y-flipped
+- DRA180720-009.bor.W Y-flipped
+- DRA180720-010.bor.W Y-flipped
+- DRA180805-003.vag.Q Y-flipped
+- DRA180814-003.imp.M Y-flipped
+- DRA180814-004.bor.M Y-flipped
+- DRA180814-005.bor.M Y-flipped
+- DRA180814-017.imp.W Y-flipped
+- DRA180819-002.rufo.M Y-flipped
+- DRA190709-001.sande.W Y-flipped
+- DRA190709-003.bimac.W Y-flipped
+- DRA190709-004.imp.W Y-flipped
+- DRA190709-005.imp.W Y-flipped
+- DRA190709-006.vag.W Y-flipped
+- DRA190709-007.vag.M Y-flipped
+- DRA190709-008.vag.W Y-flipped
+- DRA190709-009.vag.W Y-flipped
+- DRA190709-010.bimac.W Y-flipped
+- DRA190709-011.bimac.W Y-flipped
+- DRA190709-012.bimac.W Y-flipped
+- DRA190709-013.vag.W Y-flipped
+- DRA190709-014.vag.W Y-flipped
+- DRA190709-015.terri.W Y-flipped
+- DRA190709-016.tern.Q Y-flipped
+- DRA190709-016a.tern.Q Y-flipped
+- DRA190718-002.rufo-perp.M Y-flipped
+- FJ170607-006.vag.W Y-flipped
+- FJ170617-035.bor.W Y-flipped
+- FJ170624-002.imp.W Y-flipped
+- FJ170624-004.imp.W Y-flipped
+- FJ170624-005.imp.W Y-flipped
+- FJ170703-037.bor.Q Y-flipped
+- FJ170703-038.vag.W Y-flipped
+- FJ170703-039.bimac.W Y-flipped
+- FJ170703-041.tern.W Y-flipped
+- FJ170703-042.imp.W Y-flipped
+- FJ170703-044.imp.W Y-flipped
+- FJ170703-045.bimac.W Y-flipped
+- FJ170703-045a.bimac.W Y-flipped
+- FJ170703-048.tern.W Y-flipped
+- FJ170706-007.vag.W Y-flipped
+- FJ170706-008.vag.W Y-flipped
+- FJ170709-051.bor.W Y-flipped
+- FJ170709-052.vag.Q Y-flipped
+- FJ170709-063.bor.W Y-flipped
+- FJ170709-064.bimac.W Y-flipped
+- FJ170709-066.bimac.W Y-flipped
+- FJ170712-009.bor.W Y-flipped
+- FJ170712-011.bor.W Y-flipped
+- FJ170712-018.vag.W Y-flipped
+- FJ170712-020.vag.W Y-flipped
+- FJ170712-038.sande.W Y-flipped
+- FJ170712-071.bimac.W Y-flipped
+- FJ170722-029.rufo.M Y-flipped
+- FJ170722-031.vag.W Y-flipped
+- FJ170723-032.bimac.W Y-flipped
+- FJ170727-030.bimac.W Y-flipped
+- FJ170804-081.bimac.W Y-flipped
+- FJ170830-162.vag.W Y-flipped
+- FJ170830-165.bor.M Y-flipped
+- FJ170830-166.vag.W Y-flipped
+- FJ170830-169.bor.W Y-flipped
+- FJ170830-169a.vag.W Y-flipped
+- FJ180607-002.imp.Q Y-flipped
+- FJ180607-003.bimac.Q Y-flipped
+- FJ180607-004.bimac.W Y-flipped
+- FJ180607-005.bimac.W Y-flipped
+- FJ180607-003.imp.Q Y-flipped
+- FJ180619-009.bimac.W Y-flipped
+- FJ180619-014.vag.W Y-flipped
+- FJ190605-002.imp.Q Y-flipped
+- FJ190605-003.imp.Q Y-flipped
+- FJ190610-011.rufo.W Y-flipped
+- FJ190610-012.rufo.W Y-flipped
+- FJ190610-013.vag.W Y-flipped
+- FJ190612-001.bimac.W Y-flipped
+- FJ190612-002.imp.W Y-flipped
+- FJ190612-003.imp.W Y-flipped
+- FJ190619-001.tern.Q Y-flipped
+- FJ190619-002.tern.Q Y-flipped
+- FJ190619-003.tern.W Y-flipped
+- FJ190619-004.tern.W Y-flipped
+- FJ190619-005.bimac.W Y-flipped
+- FJ190619-006.terri.W Y-flipped
+- FJ190619-007.tern.W Y-flipped
+- FJ190619-008.bimac.W Y-flipped
+- FJ190619-009.terri.W Y-flipped
+- FJ190619-010.tern.W Y-flipped
+- FJ190621-001.bimac.W Y-flipped
+- FJ190621-002.tern.W Y-flipped
+- FJ190627-001.bimac.W Y-flipped
+- FJ190627-002.bimac.W Y-flipped
+- FJ190627-004.imp.W Y-flipped
+- FJ190627-005.imp.W Y-flipped
+- FJ190628-001.bimac.W Y-flipped
+- FJ190628-002.vag.W Y-flipped
+- FJ190628-004.bimac.W Y-flipped
+- FJ190628-004a.bimac.W Y-flipped
+- FJ190628-005.bimac.W Y-flipped
+- FJ190628-006.tern.W Y-flipped
+- FJ190628-008.bimac.W Y-flipped
+- FJ190628-009.bimac.W Y-flipped
+- FJ190628-010.tern.Q Y-flipped
+- FJ190628-011.bimac.W Y-flipped
+- FJ190628-003.bimac.W Y-flipped
+- FJ190628-012.bimac.W Y-flipped
+- FJ190628-013.bimac.W Y-flipped
+- FJ190628-014.tern.W Y-flipped
+- FJ190703-001.vag.W Y-flipped
+- FJ190703-002.vag.W Y-flipped
+- FJ190703-003.bor.Q Y-flipped
+- FJ190703-004.vag.Q Y-flipped
+- FJ190703-005.bimac.W Y-flipped
+- FJ190703-006.vag.W Y-flipped
+- FJ190703-007.vag.W Y-flipped
+- FJ190703-008.vag.W Y-flipped
+- FJ190703-009.vag.W Y-flipped
+- FJ190703-010.tern.W Y-flipped
+- FJ190703-012.bimac.W Y-flipped
+- FJ190703-012.vag.W Y-flipped
+- FJ190703-013.imp.W Y-flipped
+- FJ190705-001.bimac.W Y-flipped
+- FJ190705-002.bimac.W Y-flipped
+- FJ190705-004.bimac.W Y-flipped
+- FJ190705-005.imp.W Y-flipped
+- FJ190705-006.imp.W Y-flipped
+- FJ190709-001.vag.W Y-flipped
+- FJ190709-002.bor.W Y-flipped
+- FJ190709-003.tern.W Y-flipped
+- FJ190709-004.bimac.W Y-flipped
+- FJ190709-005.bimac.W Y-flipped
+- FJ190709-006.bimac.W Y-flipped
+- FJ190709-007.bimac.W Y-flipped
+- FJ190709-008.imp.W Y-flipped
+- FJ190709-009.sande.W Y-flipped
+- FJ190709-010.bimac.W Y-flipped
+- FJ190709-011.vag.W Y-flipped
+- FJ190709-012.bimac.W Y-flipped
+- FJ190710-001.bimac.W Y-flipped
+- FJ190710-002.bimac.M Y-flipped
+- FJ190710-003.imp.W Y-flipped
+- FJ190710-004.imp.W Y-flipped
+- FJ190711-001.ferv.Q Y-flipped
+- FJ190711-009.tern.W Y-flipped
+- FJ190711-010.imp.W Y-flipped
+- FJ190715-001.bimac.M Y-flipped
+- FJ190715-002.imp.W Y-flipped
+- FJ190716-001.tern.W Y-flipped
+- FJ190716-002.tern.W Y-flipped
+- FJ190716-003.vag.W Y-flipped
+- FJ190716-004.bimac.W Y-flipped
+- FJ190716-005.bimac.W Y-flipped
+- FJ190716-006.bimac.W Y-flipped
+- FJ190716-007.bimac.W Y-flipped
+- FJ190716-009.imp.W Y-flipped
+- FJ190716-010.vag.M Y-flipped
+- FJ190716-011.tern.W Y-flipped
+- FJ190716-012.bimac.W Y-flipped
+- FJ190716-013.bimac.W Y-flipped
+- FJ190718-002.vag.W Y-flipped
+- FJ190718-003.vag.W Y-flipped
+- FJ190718-005.terri.W Y-flipped
+- FJ190724-001.vag.M Y-flipped
+- FJ190724-002.terri.W Y-flipped
+- FJ190724-004.bimac.W Y-flipped
+- FJ190724-005.bimac.W Y-flipped
+- FJ190724-006.tern.W Y-flipped
+- FJ190814-006.imp.W Y-flipped
+- FJ190814-008.imp.W Y-flipped
+- GFO190709-001.bor.Q Y-flipped
+- HFN190709-002.sande.W Y-flipped
+- JG170708-021.ferv.W Y-flipped
+- JG170712-015.bimac.W Y-flipped
+- JG170712-016.sande.W Y-flipped
+- JG170712-016.bimac.W Y-flipped
+- JG170712-022.ferv.W Y-flipped
+- JG170712-024.rufo.W Y-flipped
+- JG170712-026.tern.W Y-flipped
+- JG170712-026.vag.W Y-flipped
+- JG170712-014.vag.W Y-flipped
+- JG170712-027.vag.W Y-flipped
+- JG170712-028.bor.W Y-flipped
+- JG170712-047.vag.W Y-flipped
+- JG170712-049.bor.W Y-flipped
+- JG170712-050.bimac.W Y-flipped
+- JG170712-058.perp.W Y-flipped
+- JG170712-062.vag.W Y-flipped
+- JG170712-063.bimac.W Y-flipped
+- JG170801-048.imp.Q Y-flipped
+- JG190804-035.terri.W Y-flipped
+- JG170804-073.bimac.W Y-flipped
+- JG170804-074.bimac.W Y-flipped
+- JG170804-076.tern.W Y-flipped
+- JG170804-077.tern.W Y-flipped
+- JG170804-078.imp.W Y-flipped
+- JLS180814-018.bor.M Y-flipped
+- JLS180814-001.bor.Q Y-flipped
+- JL190610-040.imp.Q Y-flipped
+- JL190610-041.imp.Q Y-flipped
+- JL190612-001.bimac.W Y-flipped
+- JL190612-003.gris.Q Y-flipped
+- JL190619-001.tern.W Y-flipped
+- JL190619-002.tern.W Y-flipped
+- JL190619-003.tern.Q Y-flipped
+- JL190619-004.terri.Q Y-flipped
+- JL190619-005.tern.Q Y-flipped
+- JL190619-006.bor.W Y-flipped
+- JL190619-007.tern.W Y-flipped
+- JL190619-008.terri.W Y-flipped
+- JL190619-009.bimac.W Y-flipped
+- JL190619-010.tern.W Y-flipped
+- JL190627-001.bimac.W Y-flipped
+- JL190627-002.imp.W Y-flipped
+- JL190628-001.tern.W Y-flipped
+- JL190628-002.terri.W Y-flipped
+- JL190628-003.bor.Q Y-flipped
+- JL190628-005.bimac.W Y-flipped
+- JL190628-006.terri.W Y-flipped
+- JL190703-001.vag.Q Y-flipped
+- JL190703-002.vag.W Y-flipped
+- JL190703-003.bimac.W Y-flipped
+- JL190703-004.bimac.W Y-flipped
+- JL190703-004.vag.W Y-flipped
+- JL190703-005.tern.W Y-flipped
+- JL190703-006.tern.W Y-flipped
+- JL190703-007.bimac.W Y-flipped
+- JL190703-008.bimac.W Y-flipped
+- JL190703-009.terri.W Y-flipped
+- JL190703-010.terri.W Y-flipped
+- JL190703-011.tern.W Y-flipped
+- JL190703-013.bimac.W Y-flipped
+- JL190705-003.imp.W Y-flipped
+- JL190710-001.vag.W Y-flipped
+- JL190710-002.imp.W Y-flipped
+- JL190710-005.vag.W Y-flipped
+- JL190711-001.tern.W Y-flipped
+- JL190711-002.tern.W Y-flipped
+- JL190711-004.terri.W Y-flipped
+- JL190711-005.terri.W Y-flipped
+- JL190711-006.terri.W Y-flipped
+- JL190711-008.sande.M Y-flipped
+- JL190716-001.tern.W Y-flipped
+- JL190716-002.tern.W Y-flipped
+- JL190716-003.vag.W Y-flipped
+- JL190716-004.imp.W Y-flipped
+- JL190716-005.bimac.W Y-flipped
+- JL190716-006.tern.W Y-flipped
+- JL190716-007.tern.W Y-flipped
+- JL190716-008.tern.W Y-flipped
+- JL190716-009.tern.W Y-flipped
+- JL190716-010.bimac.M Y-flipped
+- JL190716-011.imp.W Y-flipped
+- JL190716-012.imp.W Y-flipped
+- JL190724-004.tern.W Y-flipped
+- JL190724-006.vag.W Y-flipped
+- JMS190709-001.vag.W Y-flipped
+- LMB190709-001.sande.W Y-flipped
+- LMB190715-001.bimac.W Y-flipped
+- MM190709-001.vag.W Y-flipped
+- MPS180619-010.imp.W Y-flipped
+- MPS180619-011.imp.W Y-flipped
+- MPS180619-012.bimac.W Y-flipped
+- MPS180619-013.bimac.W Y-flipped
+- MT190709-001.vag.W Y-flipped
+- MY180615-001.bimac.W Y-flipped
+- MY180615-002.tern.Q Y-flipped
+- MY180615-007.terri.W Y-flipped
+- MY180615-011.bimac.W Y-flipped
+- MY180619-001.vag.W Y-flipped
+- MY180619-005.vag.W Y-flipped
+- MY180619-020.bimac.W Y-flipped
+- MY180619-022.bimac.W Y-flipped
+- MY180621-001.bimac.W Y-flipped
+- MY180621-005.imp.W Y-flipped
+- MY180622-002.bimac.W Y-flipped
+- MY180622-003.bimac.W Y-flipped
+- MY180622-005.tern.W Y-flipped
+- MY180626-001.vag.W Y-flipped
+- MY180626-002.tern.W Y-flipped
+- MY180626-003.vag.Q Y-flipped
+- MY180626-004.bimac.W Y-flipped
+- MY180626-005.tern.W Y-flipped
+- MY180626-006.tern.W Y-flipped
+- MY180626-007.bimac.W Y-flipped
+- MY180703-004.terri.W Y-flipped
+- MY180703-005.terri.W Y-flipped
+- MY180703-007.imp.W Y-flipped
+- MY180703-008.vag.W Y-flipped
+- MY180711-001.bimac.W Y-flipped
+- MY180711-002.bimac.M Y-flipped
+- MY180711-003.bimac.W Y-flipped
+- MY180711-004.bimac.W Y-flipped
+- MY180711-005.bimac.M Y-flipped
+- MY180711-006.bimac.M Y-flipped
+- MY180719-001.tern.W Y-flipped
+- MY180719-002.tern.W Y-flipped
+- MY180719-003.imp.W Y-flipped
+- MY180719-004.imp.W Y-flipped
+- MY180719-005.tern.W Y-flipped
+- MY180719-006.bimac.W Y-flipped
+- MY180719-007.tern.W Y-flipped
+- MY180731-001.vag.W Y-flipped
+- MY180731-003.vag.W Y-flipped
+- MY180802-001.vag.W Y-flipped
+- MY180802-002.bor.W Y-flipped
+- MY180802-004.tern.W Y-flipped
+- MY180802-006.tern.W Y-flipped
+- MY180802-007.tern.W Y-flipped
+- MY180814-002.rufo.M Y-flipped
+- MY180814-005.bor.M Y-flipped
+- MY180814-007.vag.M Y-flipped
+- MY180814-008.imp.M Y-flipped
+- MY180814-010.vag.W Y-flipped
+- MY190522-001.bimac.Q Y-flipped
+- MY190522-002.bimac.Q Y-flipped
+- MY190522-003.bimac.Q Y-flipped
+- MY190522-004.imp.Q Y-flipped
+- MY190522-005.bimac.Q Y-flipped
+- MY190522-006.imp.Q Y-flipped
+- MY190529-001.imp.Q Y-flipped
+- MY190529-002.imp.Q Y-flipped
+- MY190605-001.bimac.Q Y-flipped
+- MY190605-004.imp.Q Y-flipped
+- MY190612-001.bimac.W Y-flipped
+- MY190619-001.tern.Q Y-flipped
+- MY190619-002.bimac.W Y-flipped
+- MY190619-003.tern.W Y-flipped
+- MY190619-004.bor.Q Y-flipped
+- MY190621-001.bimac.W Y-flipped
+- MY190621-002.bimac.W Y-flipped
+- PF190610-014.vag.W Y-flipped
+- PF190610-015.vag.W Y-flipped
+- PF190610-027.rufo.W Y-flipped
+- PF190709-001.vag.W Y-flipped
+- PF190709-002.vag.W Y-flipped
+- PF190709-003.rufo.W Y-flipped
+- PF190709-005.imp.W Y-flipped
+- PF190709-006.imp.Q Y-flipped
+- PF190709-007.vag.W Y-flipped
+- PF190709-008.bimac.W Y-flipped
+- PF190709-009.bimac.W Y-flipped
+- PF190724-001.bimac.W Y-flipped
+- PF190724-002.imp.W Y-flipped
+- PF190724-003.imp.W Y-flipped
+- PF190724-006.vag.W Y-flipped
+- PF190724-007.imp.Q Y-flipped
+- PRM190709-001.bor.W Y-flipped
+- PS170709-067.bimac.W Y-flipped
+- TJ190530-003.imp.Q Y-flipped
+- TWM180614-001.imp.W Y-flipped
+- TWM180614-003.imp.W Y-flipped
+- TWM180614-010.bor.W Y-flipped
+- TWM180614-012.vag.W Y-flipped
+- TWM180614-013.vag.W Y-flipped
+- TWM180614-019.vag.W Y-flipped
+- TWM180614-033.bor.W Y-flipped
+- TWM180614-034.bor.W Y-flipped
+- TWM180614-036.bor.Q Y-flipped
+- TWM180614-040.imp.W Y-flipped
+- TWM180614-054.bimac.W Y-flipped
+- TWM180614-055.imp.W Y-flipped
+- TWM180614-056.bimac.Q Y-flipped
+- TWM180614-059.bimac.W Y-flipped
+- TWM180614-060.rufo.W Y-flipped
+- TWM180614-061.bimac.W Y-flipped
+- TWM180614-064.vag.W Y-flipped
+- TWM180614-068.bimac.W Y-flipped
+- TWM180614-070.terri.W Y-flipped
+- TWM180614-072.bimac.W Y-flipped
+- TWM180614-079.bor.W Y-flipped
+- TWM180614-082.terri.W Y-flipped
+- TWM180711-001.bimac.W Y-flipped
+- TWM180711-002.bimac.W Y-flipped
+- TWM180711-003.bimac.W Y-flipped
+- TWM180711-005.bimac.W Y-flipped
+- TWM180711-006.bimac.W Y-flipped
+- TWM180711-008.terri.M Y-flipped
+- TWM180711-009.terri.M Y-flipped
+- TWM180711-011.bimac.M Y-flipped
+- TWM180711-013.bimac.M Y-flipped
+- TWM180711-013.ferv.M Y-flipped
+- TWM180711-014.imp.W Y-flipped
+- TWM180711-015.vag.M Y-flipped
+- TWM180711-016.bimac.M Y-flipped
+- TWM180711-017.ferv.M Y-flipped
+- TWM180719-001.imp.W Y-flipped
+- TWM180719-002.bimac.M Y-flipped
+- TWM180719-003.bimac.W Y-flipped
+- TWM180719-004.tern.W Y-flipped
+- TWM180719-005.tern.W Y-flipped
+- TWM180719-006.tern.W Y-flipped
+- TWM180719-007.tern.W Y-flipped
+- TWM180724-001.rufo.W Y-flipped
+- TWM180724-002.terri.M Y-flipped
+- TWM180724-003.ferv.M Y-flipped
+- TWM180724-004.ferv.M Y-flipped
+- TWM180824-005.bor.M Y-flipped
+- TWM180724-006.bimac.M Y-flipped
+- TWM180724-007.bimac.M Y-flipped
+- TWM180724-008.vag.M Y-flipped
+- TWM180724-009.perp.M Y-flipped
+- TWM180724-010.bimac.W Y-flipped
+- TWM180724-011.terri.M Y-flipped
+- TWM180724-012.ferv.M Y-flipped
+- TWM180724-013.vag.M Y-flipped
+- TWM180724-014.ferv.M Y-flipped
+- TWM180724-015.vag.M Y-flipped
+- TWM180724-016.bor.M Y-flipped
+- TWM180724-017.bor.M Y-flipped
+- TWM180724-018.rufo.W Y-flipped
+- TWM180724-019.rufo.M Y-flipped
+- TWM180724-020.vag.W Y-flipped
+- TWM180724-021.ferv.M Y-flipped
+- TWM180724-022.rufo.W Y-flipped
+- TWM180724-023.bor.M Y-flipped
+- TWM180724-024.ferv.M Y-flipped
+- TWM180724-026.bimac.M Y-flipped
+- TWM180724-026.perp.W Y-flipped
+- TWM180724-027.bor.W Y-flipped
+- TWM180724-028.tern.W Y-flipped
+- TWM180731-001.bimac.M Y-flipped
+- TWM180731-002.imp.W Y-flipped
+- TWM180731-003.imp.W Y-flipped
+- TWM180731-004.imp.W Y-flipped
+- TWM180731-008.bimac.M Y-flipped
+- TWM180802-002.vag.W Y-flipped
+- TWM180802-003.tern.W Y-flipped
+- TWM180802-003.vag.W Y-flipped
+- TWM180802-004.vag.M Y-flipped
+- TWM180802-005.tern.W Y-flipped
+- TWM180802-006.bor.W Y-flipped
+- TWM180802-007.tern.W Y-flipped
+- TWM180802-008.tern.W Y-flipped
+- TWM180802-009.tern.W Y-flipped
+- TWM180802-010.tern.W Y-flipped
+- TWM180808-003.bor.W Y-flipped
+- TWM180814-002.bor.W Y-flipped
+- TWM180814-004.perp.M Y-flipped
+- TWM180814-015.perp.W Y-flipped
+- TWM180814-016.imp.W Y-flipped
+
+
+## Generalized Procrustes analysis
+
+Performed by user `drangeli` with `borealis::align.procrustes` version 2021.3.2 on Tuesday, 03 May 2022, 15:00:13
+
+
+## Geomorph data frame conversion
+
+Performed by user `drangeli` with `borealis::listed.gdf` version 2021.3.2 on Tuesday, 03 May 2022, 15:00:13
+
+Current data structure:
+- gdf
+  - specimen.id
+  - species
+  - caste
+  - digitizer
+  - body
+  - its
+  - sp.caste
+  - fw.length
+  - coords
+  - Csize
+- landmark.number
+- specimen.number
+- scaled
+- provenance
+- censensus
+
+ ## Data provenance report
+
+
+Generated by user `drangeli` with `borealis::write.provenance` version 2021.3.2 on Tuesday, 03 May 2022, 15:00:18
+
+

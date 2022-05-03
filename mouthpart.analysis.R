@@ -4,6 +4,7 @@
 # rm(list=ls())
 # gc() 
 
+# devtools::install_github("aphanotus/borealis")
 library(borealis)
 library(tidyverse)
 library(ggpubr)
@@ -409,6 +410,10 @@ w.rrpp.unique.allometries.pw <-
 # that works with a continuous multivariate independent dataset 
 # So, I'll use the simple phylogenetic regression in nlme::gls
 
+m.species.names <- unique(sort(as.character(w.list$species)))
+m.species.names <- sub("bim","bimac",m.species.names)
+m.species.names <- sub("san","sande",m.species.names)
+
 btree <- Bombus.tree
 btree$tip.label <- btree$code.name
 btree <- keep.tip(btree, btree$tip.label[which(btree$tip.label %in% m.species.names)])
@@ -430,11 +435,12 @@ w.sp <- w.sp[btree$tip.label,]
 # Check that the names in the tree and dataset match
 geiger::name.check(btree, w.sp)
 
-pgls.PC1.by.ITS <- gls(PC1 ~ log(its), correlation = corBrownian(phy = btree), method = "REML", data = w.sp)
+pgls.PC1.by.ITS <- gls(PC1 ~ log(its), 
+                       correlation = corBrownian(phy = btree), 
+                       method = "REML", data = w.sp)
 summary(pgls.PC1.by.ITS)
 with(w.sp, plot(PC1 ~ log(its)))
 abline(a = coef(pgls.PC1.by.ITS)[1], b = coef(pgls.PC1.by.ITS)[2])
-
 # Generalized least squares fit by REML
 #      AIC      BIC    logLik
 # 29.02208 28.39736 -11.51104
@@ -444,11 +450,12 @@ abline(a = coef(pgls.PC1.by.ITS)[1], b = coef(pgls.PC1.by.ITS)[2])
 # log(its)     19.67571  4.555605  4.319011  0.0050
 # Degrees of freedom: 8 total; 6 residual
 
-pgls.PC2.by.ITS <- gls(PC2 ~ log(its), correlation = corBrownian(phy = btree), method = "REML", data = w.sp)
+pgls.PC2.by.ITS <- gls(PC2 ~ log(its), 
+                       correlation = corBrownian(phy = btree), 
+                       method = "REML", data = w.sp)
 summary(pgls.PC2.by.ITS)
 with(w.sp, plot(PC2 ~ log(its)))
 abline(a = coef(pgls.PC2.by.ITS)[1], b = coef(pgls.PC2.by.ITS)[2])
-
 # Generalized least squares fit by REML
 #      AIC      BIC    logLik
 # 21.49779 20.87307 -7.748894
@@ -714,3 +721,5 @@ specialization.plot
 ggsave("plots/specialization.plot.png", specialization.plot, width = 6.5, height = 5, scale = 1)
 ggsave("plots/specialization.plot.pdf", specialization.plot, width = 6.5, height = 5, scale = 1)
 
+# Save everything
+save.image("bombus.scaling.rda")
