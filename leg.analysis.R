@@ -4,6 +4,7 @@
 # rm(list=ls())
 # gc() 
 
+# Load packages
 # devtools::install_github("aphanotus/borealis")
 x <- c("tidyverse","ggpubr","ggrepel","factoextra","viridis",
        "RRPP","multcompView","ggbeeswarm","phytools","nlme")
@@ -412,7 +413,7 @@ abline(a = coef(pgls.legPC2.by.its)[1], b = coef(pgls.legPC2.by.its)[2])
 leg.list$code.name <- as.character(leg.list$species)
 forage$code.name <- sub("bimac","bim",forage$code.name)
 
-# Filter out the foraging information that covers species not in out dataset
+# Filter out the foraging information that covers species not in our dataset
 x <- which(forage$code.name %in% unique(leg.list$code.name))
 forage <- forage[x,]
 # All species in our dataset are covered by the foraging information
@@ -476,7 +477,7 @@ pairs(x[,c("PC1","PC2","alloPC1","wood.dbs","richness","shannon","simpson",
 # PC1 and Faith's PD (0.43), followed by Wood's PC2 (0.36), 
 # richness (0.35) and Wood's DBS (0.34)
 
-# Model the affect of foraging metrics on leg measures
+# Model the effect of foraging metrics on leg measures
 # Comparisons among these models can be made based on Z values (effect size)
 i <- 1e4-1
 leg.forage.its.lm <- lm.rrpp(mm ~ log(its), data = leg.list, iter = i, print.progress = FALSE)

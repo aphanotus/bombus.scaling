@@ -4,6 +4,7 @@
 # rm(list=ls())
 # gc() 
 
+# Load packages
 # devtools::install_github("aphanotus/borealis")
 x <- c("borealis","tidyverse","ggpubr","ggrepel","factoextra","viridis",
        "RRPP","multcompView","ggbeeswarm","phytools","nlme")
@@ -465,7 +466,7 @@ abline(a = coef(pgls.PC2.by.ITS)[1], b = coef(pgls.PC2.by.ITS)[2])
 w.list$code.name <- as.character(w.list$species)
 forage$code.name <- sub("bimac","bim",forage$code.name)
 
-# Filter out the foraging information that covers species not in out dataset
+# Filter out the foraging information that covers species not in our dataset
 x <- which(forage$code.name %in% unique(w.list$code.name))
 forage <- forage[x,]
 
@@ -543,7 +544,7 @@ pairs(x[,c("PC1","PC2","alloPC1","wood.dbs","richness","shannon","simpson",
 # PC1 and Simpson's diversity (0.49), Wood's forage plant PC2 (0.47),
 # and Wood's DBS (0.42)
 
-# Model the affect of foraging metrics on mouthpart shape
+# Model the effect of foraging metrics on mouthpart shape
 # Comparisons among these models can be made based on Z values (effect size)
 # Species should be a strong predictor, but the forage plant metric with the
 # next best effect will be informative.

@@ -1,0 +1,225 @@
+﻿study,forage.species,common.plant.name,family,Bombus.species,interactions
+Burkle et al. 2013,Delphinium tricorne,dwarf larkspur,Ranunculaceae,bimaculatus,21
+Burkle et al. 2013,Dicentra cucullaria,Dutchman's pipe,Papaveraceae,bimaculatus,9
+Burkle et al. 2013,Geranium maculatum,wild geranium,Geraniaceae,bimaculatus,2
+Burkle et al. 2013,Hydrophyllum,waterleaf,Boraginaceae,bimaculatus,31
+Burkle et al. 2013,Mertensia virginica,Virginia bluebells,Boraginaceae,bimaculatus,8
+Burkle et al. 2013,Monarda,bee balm,Lamiaceae,bimaculatus,10
+Burkle et al. 2013,Sanicula odorata,black snakeroot,Apiaceae,bimaculatus,1
+Burkle et al. 2013,Tradescantia virginiana,spiderwort,Commelinaceae,bimaculatus,4
+Burkle et al. 2013,Hydrophyllum,waterleaf,Boraginaceae,griseocollis,12
+Burkle et al. 2013,Delphinium tricorne,dwarf larkspur,Ranunculaceae,impatiens,1
+Burkle et al. 2013,Hydrophyllum,waterleaf,Boraginaceae,impatiens,1
+Burkle et al. 2013,Mertensia virginica,Virginia bluebells,Boraginaceae,impatiens,4
+Burkle et al. 2013,Tradescantia virginiana,spiderwort,Commelinaceae,impatiens,2
+Burkle et al. 2013,Delphinium tricorne,dwarf larkspur,Ranunculaceae,pensylvanicus,1
+Burkle et al. 2013,Delphinium tricorne,dwarf larkspur,Ranunculaceae,vagans,1
+Burkle et al. 2013,Monarda,bee balm,Lamiaceae,vagans,1
+Burkle et al. 2013,Tradescantia virginiana,spiderwort,Commelinaceae,vagans,1
+Burkle et al. 2013,Viola sororia,purple violet,Violaceae,vagans,1
+Harder 1985,Cirsium,thistle,Asteraceae,fervidus,17
+Harder 1985,Lycopus americanus,bugleweed,Lamiaceae,fervidus,26
+Harder 1985,Melilotus,sweet clover,Fabaceae,fervidus,10
+Harder 1985,Oenothera biennis,evening-primrose,Onagraceae,fervidus,10
+Harder 1985,Prunella vulgaris,self-heal,Lamiaceae,fervidus,37
+Harder 1985,Solidago,goldenrod,Asteraceae,fervidus,15
+Harder 1985,Solidago,goldenrod,Asteraceae,fervidus,30
+Harder 1985,Symphyotrichum novae-angliae,New England aster,Asteraceae,fervidus,15
+Harder 1985,Vicia,vetch,Fabaceae,fervidus,24
+Harder 1985,Arctium minus,burdock,Asteraceae,griseocollis,18
+Harder 1985,Asclepias syriaca,common milkweed,Apocynaceae,griseocollis,13
+Harder 1985,Cirsium,thistle,Asteraceae,griseocollis,1
+Harder 1985,Lycopus americanus,bugleweed,Lamiaceae,griseocollis,1
+Harder 1985,Melilotus,sweet clover,Fabaceae,griseocollis,26
+Harder 1985,Solidago,goldenrod,Asteraceae,griseocollis,9
+Harder 1985,Solidago,goldenrod,Asteraceae,griseocollis,61
+Harder 1985,Spiraea,meadowsweet,Rosaceae,griseocollis,14
+Harder 1985,Symphyotrichum novae-angliae,New England aster,Asteraceae,griseocollis,1
+Harder 1985,Arctium minus,burdock,Asteraceae,impatiens,2
+Harder 1985,Lycopus americanus,bugleweed,Lamiaceae,impatiens,1
+Harder 1985,Melilotus,sweet clover,Fabaceae,impatiens,3
+Harder 1985,Rubus,raspberry,Rosaceae,impatiens,1
+Harder 1985,Solidago,goldenrod,Asteraceae,impatiens,1
+Harder 1985,Solidago,goldenrod,Asteraceae,impatiens,43
+Harder 1985,Spiraea,meadowsweet,Rosaceae,impatiens,1
+Harder 1985,Arctium minus,burdock,Asteraceae,pensylvanicus,3
+Harder 1985,Cirsium,thistle,Asteraceae,pensylvanicus,10
+Harder 1985,Oenothera biennis,evening-primrose,Onagraceae,pensylvanicus,1
+Harder 1985,Prunella vulgaris,self-heal,Lamiaceae,pensylvanicus,4
+Harder 1985,Rubus,raspberry,Rosaceae,pensylvanicus,1
+Harder 1985,Solidago,goldenrod,Asteraceae,pensylvanicus,4
+Harder 1985,Solidago,goldenrod,Asteraceae,pensylvanicus,7
+Harder 1985,Symphyotrichum novae-angliae,New England aster,Asteraceae,pensylvanicus,19
+Harder 1985,Daucus,wild carrot,Apiaceae,rufocinctus,8
+Harder 1985,Lycopus americanus,bugleweed,Lamiaceae,rufocinctus,1
+Harder 1985,Melilotus,sweet clover,Fabaceae,rufocinctus,106
+Harder 1985,Solidago,goldenrod,Asteraceae,rufocinctus,1
+Harder 1985,Solidago,goldenrod,Asteraceae,rufocinctus,51
+Harder 1985,Spiraea,meadowsweet,Rosaceae,rufocinctus,2
+Harder 1985,Symphyotrichum novae-angliae,New England aster,Asteraceae,rufocinctus,1
+Harder 1985,Rubus,raspberry,Rosaceae,ternarius,1
+Harder 1985,Spiraea,meadowsweet,Rosaceae,ternarius,1
+Harder 1985,Arctium minus,burdock,Asteraceae,vagans,14
+Harder 1985,Cirsium,thistle,Asteraceae,vagans,3
+Harder 1985,Lycopus americanus,bugleweed,Lamiaceae,vagans,3
+Harder 1985,Melilotus,sweet clover,Fabaceae,vagans,5
+Harder 1985,Prunella vulgaris,self-heal,Lamiaceae,vagans,7
+Harder 1985,Rubus,raspberry,Rosaceae,vagans,5
+Harder 1985,Solidago,goldenrod,Asteraceae,vagans,16
+Wood et al. 2019,Centaurea,knapweed,Asteraceae,affinis,1
+Wood et al. 2019,Cirsium,thistle,Asteraceae,affinis,1
+Wood et al. 2019,Daucus,wild carrot,Apiaceae,affinis,5
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,affinis,3
+Wood et al. 2019,Lithospermum,stoneseed,Boraginaceae,affinis,2
+Wood et al. 2019,Lonicera,honeysuckle,Caprifoliaceae,affinis,4
+Wood et al. 2019,Melilotus,sweet clover,Fabaceae,affinis,3
+Wood et al. 2019,others,others,NA,affinis,5
+Wood et al. 2019,Solanum,nightshade,Solanaceae,affinis,7
+Wood et al. 2019,Solidago,goldenrod,Asteraceae,affinis,12
+Wood et al. 2019,Spiraea,meadowsweet,Rosaceae,affinis,2
+Wood et al. 2019,Tilia,basswood,Malvaceae,affinis,1
+Wood et al. 2019,Cirsium,thistle,Asteraceae,auricomus,8
+Wood et al. 2019,Lathyrus,peavine,Fabaceae,auricomus,2
+Wood et al. 2019,Monarda,bee balm,Lamiaceae,auricomus,10
+Wood et al. 2019,others,others,NA,auricomus,1
+Wood et al. 2019,Rhus,sumac,Anacardiaceae,auricomus,4
+Wood et al. 2019,Rosa,rose,Rosaceae,auricomus,1
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,auricomus,10
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,auricomus,11
+Wood et al. 2019,Vicia,vetch,Fabaceae,auricomus,7
+Wood et al. 2019,Hydrophyllum,waterleaf,Boraginaceae,bimaculatus,2
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,bimaculatus,1
+Wood et al. 2019,Lonicera,honeysuckle,Caprifoliaceae,bimaculatus,1
+Wood et al. 2019,others,others,NA,bimaculatus,13
+Wood et al. 2019,Pedicularis,lousewort,Orobanchaceae,bimaculatus,1
+Wood et al. 2019,Rhamnus,buckthorn,Rhamnaceae,bimaculatus,2
+Wood et al. 2019,Rhus,sumac,Anacardiaceae,bimaculatus,3
+Wood et al. 2019,Rosa,rose,Rosaceae,bimaculatus,5
+Wood et al. 2019,Rubus,raspberry,Rosaceae,bimaculatus,4
+Wood et al. 2019,Salix,willow,Salicaceae,bimaculatus,2
+Wood et al. 2019,Solanum,nightshade,Solanaceae,bimaculatus,1
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,bimaculatus,7
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,bimaculatus,17
+Wood et al. 2019,Vaccinium,Vaccinium,Ericaceae,bimaculatus,12
+Wood et al. 2019,Vicia,vetch,Fabaceae,bimaculatus,7
+Wood et al. 2019,Centaurea,knapweed,Asteraceae,borealis,2
+Wood et al. 2019,Cirsium,thistle,Asteraceae,borealis,5
+Wood et al. 2019,Cornus,dogwood,Cornaceae,borealis,1
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,borealis,1
+Wood et al. 2019,Impatiens,jewelweed,Balsaminaceae,borealis,1
+Wood et al. 2019,Monarda,bee balm,Lamiaceae,borealis,1
+Wood et al. 2019,others,others,NA,borealis,1
+Wood et al. 2019,Rubus,raspberry,Rosaceae,borealis,2
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,borealis,12
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,borealis,1
+Wood et al. 2019,Vicia,vetch,Fabaceae,borealis,10
+Wood et al. 2019,Cirsium,thistle,Asteraceae,fervidus,1
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,fervidus,5
+Wood et al. 2019,Lespedeza,bush clover,Fabaceae,fervidus,2
+Wood et al. 2019,Medicago,alfalfa,Fabaceae,fervidus,1
+Wood et al. 2019,Melilotus,sweet clover,Fabaceae,fervidus,1
+Wood et al. 2019,Monarda,bee balm,Lamiaceae,fervidus,3
+Wood et al. 2019,others,others,NA,fervidus,7
+Wood et al. 2019,Solanum,nightshade,Solanaceae,fervidus,5
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,fervidus,19
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,fervidus,9
+Wood et al. 2019,Vaccinium,Vaccinium,Ericaceae,fervidus,4
+Wood et al. 2019,Vicia,vetch,Fabaceae,fervidus,9
+Wood et al. 2019,Centaurea,knapweed,Asteraceae,griseocollis,3
+Wood et al. 2019,Cirsium,thistle,Asteraceae,griseocollis,2
+Wood et al. 2019,Daucus,wild carrot,Apiaceae,griseocollis,2
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,griseocollis,4
+Wood et al. 2019,Lotus,bird's-foot trefoil,Fabaceae,griseocollis,4
+Wood et al. 2019,Melilotus,sweet clover,Fabaceae,griseocollis,3
+Wood et al. 2019,Monarda,bee balm,Lamiaceae,griseocollis,1
+Wood et al. 2019,others,others,NA,griseocollis,19
+Wood et al. 2019,Rhus,sumac,Anacardiaceae,griseocollis,7
+Wood et al. 2019,Rubus,raspberry,Rosaceae,griseocollis,2
+Wood et al. 2019,Solanum,nightshade,Solanaceae,griseocollis,1
+Wood et al. 2019,Spiraea,meadowsweet,Rosaceae,griseocollis,4
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,griseocollis,2
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,griseocollis,28
+Wood et al. 2019,Vicia,vetch,Fabaceae,griseocollis,6
+Wood et al. 2019,Centaurea,knapweed,Asteraceae,impatiens,8
+Wood et al. 2019,Cichorium,chicory,Asteraceae,impatiens,21
+Wood et al. 2019,Cirsium,thistle,Asteraceae,impatiens,3
+Wood et al. 2019,Daucus,wild carrot,Apiaceae,impatiens,4
+Wood et al. 2019,Melilotus,sweet clover,Fabaceae,impatiens,3
+Wood et al. 2019,Monarda,bee balm,Lamiaceae,impatiens,2
+Wood et al. 2019,others,others,NA,impatiens,33
+Wood et al. 2019,Plantago,plantain,Plantaginaceae,impatiens,9
+Wood et al. 2019,Rhus,sumac,Anacardiaceae,impatiens,4
+Wood et al. 2019,Rubus,raspberry,Rosaceae,impatiens,4
+Wood et al. 2019,Solanum,nightshade,Solanaceae,impatiens,19
+Wood et al. 2019,Solidago,goldenrod,Asteraceae,impatiens,8
+Wood et al. 2019,Spiraea,meadowsweet,Rosaceae,impatiens,6
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,impatiens,3
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,impatiens,15
+Wood et al. 2019,Vaccinium,Vaccinium,Ericaceae,impatiens,3
+Wood et al. 2019,Centaurea,knapweed,Asteraceae,pensylvanicus,1
+Wood et al. 2019,Cirsium,thistle,Asteraceae,pensylvanicus,7
+Wood et al. 2019,Desmodium,tick-trefoil,Fabaceae,pensylvanicus,2
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,pensylvanicus,4
+Wood et al. 2019,Lathyrus,peavine,Fabaceae,pensylvanicus,1
+Wood et al. 2019,Medicago,alfalfa,Fabaceae,pensylvanicus,2
+Wood et al. 2019,Melilotus,sweet clover,Fabaceae,pensylvanicus,1
+Wood et al. 2019,others,others,NA,pensylvanicus,2
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,pensylvanicus,7
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,pensylvanicus,7
+Wood et al. 2019,Vicia,vetch,Fabaceae,pensylvanicus,7
+Wood et al. 2019,Epilobium,willowherb,Onagraceae,perplexus,1
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,perplexus,4
+Wood et al. 2019,Lonicera,honeysuckle,Caprifoliaceae,perplexus,5
+Wood et al. 2019,others,others,NA,perplexus,4
+Wood et al. 2019,Parietaria,nettle,Urticaceae,perplexus,1
+Wood et al. 2019,Prunus,cherry,Rosaceae,perplexus,4
+Wood et al. 2019,Rhus,sumac,Anacardiaceae,perplexus,4
+Wood et al. 2019,Ribes,gooseberry,Grossulariaceae,perplexus,1
+Wood et al. 2019,Rosa,rose,Rosaceae,perplexus,1
+Wood et al. 2019,Rubus,raspberry,Rosaceae,perplexus,10
+Wood et al. 2019,Salix,willow,Salicaceae,perplexus,2
+Wood et al. 2019,Solanum,nightshade,Solanaceae,perplexus,8
+Wood et al. 2019,Solidago,goldenrod,Asteraceae,perplexus,1
+Wood et al. 2019,Spiraea,meadowsweet,Rosaceae,perplexus,1
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,perplexus,1
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,perplexus,3
+Wood et al. 2019,Vaccinium,Vaccinium,Ericaceae,perplexus,11
+Wood et al. 2019,Ceanothus,California lilac,Rhamnaceae,ternarius,1
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,ternarius,2
+Wood et al. 2019,Melilotus,sweet clover,Fabaceae,ternarius,12
+Wood et al. 2019,Monarda,bee balm,Lamiaceae,ternarius,1
+Wood et al. 2019,others,others,NA,ternarius,8
+Wood et al. 2019,Potentilla,cinquefoil,Rosaceae,ternarius,2
+Wood et al. 2019,Prunus,cherry,Rosaceae,ternarius,3
+Wood et al. 2019,Rhus,sumac,Anacardiaceae,ternarius,3
+Wood et al. 2019,Rubus,raspberry,Rosaceae,ternarius,8
+Wood et al. 2019,Solidago,goldenrod,Asteraceae,ternarius,8
+Wood et al. 2019,Spiraea,meadowsweet,Rosaceae,ternarius,1
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,ternarius,9
+Wood et al. 2019,Vaccinium,Vaccinium,Ericaceae,ternarius,5
+Wood et al. 2019,Vicia,vetch,Fabaceae,ternarius,1
+Wood et al. 2019,Anemone,anemone,Ranunculaceae,terricola,2
+Wood et al. 2019,Barbarea vulgaris,bittercress,Brassicaceae,terricola,5
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,terricola,3
+Wood et al. 2019,Lonicera,honeysuckle,Caprifoliaceae,terricola,4
+Wood et al. 2019,Melilotus,sweet clover,Fabaceae,terricola,18
+Wood et al. 2019,others,others,NA,terricola,9
+Wood et al. 2019,Potentilla,cinquefoil,Rosaceae,terricola,1
+Wood et al. 2019,Ranunculus,buttercup,Ranunculaceae,terricola,1
+Wood et al. 2019,Rhus,sumac,Anacardiaceae,terricola,2
+Wood et al. 2019,Rubus,raspberry,Rosaceae,terricola,4
+Wood et al. 2019,Salix,willow,Salicaceae,terricola,1
+Wood et al. 2019,Silene,campion,Caryophyllaceae,terricola,1
+Wood et al. 2019,Solidago,goldenrod,Asteraceae,terricola,7
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,terricola,7
+Wood et al. 2019,Centaurea,knapweed,Asteraceae,vagans,3
+Wood et al. 2019,Cirsium,thistle,Asteraceae,vagans,3
+Wood et al. 2019,Hypericum,St. John's wort,Hypericaceae,vagans,7
+Wood et al. 2019,Monarda,bee balm,Lamiaceae,vagans,5
+Wood et al. 2019,others,others,NA,vagans,15
+Wood et al. 2019,Rubus,raspberry,Rosaceae,vagans,7
+Wood et al. 2019,Solidago,goldenrod,Asteraceae,vagans,1
+Wood et al. 2019,Spiraea,meadowsweet,Rosaceae,vagans,2
+Wood et al. 2019,Trifolium pratense,red clover,Fabaceae,vagans,20
+Wood et al. 2019,Trifolium repens,white clover,Fabaceae,vagans,11
+Wood et al. 2019,Vicia,vetch,Fabaceae,vagans,2
