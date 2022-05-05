@@ -1020,7 +1020,7 @@ hw.worker.its$gdf$alloPC1 <- hw.its.lm.pca$x[,1]
 ####################
 # Correlations to forage diversity
 ####################
-( forage <- read.csv("Wood.et.al.2019.forage.diversity.csv") )
+forage <- read.csv("Wood.et.al.2019.forage.diversity.csv") 
 
 # Make the species abbreviations (code names) match
 fw.worker.its$gdf$code.name <- as.character(fw.worker.its$gdf$species)
@@ -1097,6 +1097,7 @@ x <- data.frame(
 )
 
 pairs(x, cor.method = "spearman")
+# There are strong correlations with all diversity metrics!
 # The strongest correlations appear to be with
 # PC1 and Wood's PC1 (0.62), followed by Shannon's Index (0.59), 
 # richness (0.48) and Simpson's Index (0.46)
@@ -1292,14 +1293,296 @@ fw.specialization.plot <- df %>%
            color="grey40", size = 2.5,
            label="permANOVA with residual randomization
 12 linear measurements of worker legs
-Y ~ log(individual ITS) + species Faith's PD for forage plants
-  ITS:  R^2 = 0.437, p < 10^-4
-  FPD:  R^2 = 0.051, p < 10^-4") +
+Y ~ log(Csize) + Wood's dietary breadth score (DBS)
+  Csize: R^2 = 0.061, p < 10^-4
+  DBS:   R^2 = 0.128, p < 10^-4") +
   labs(x="dietary breadth score (Wood et al. 2019 Ecology)",
-       y="leg morphology (PC1)")
+       y="forewing shape (PC1)")
 
 fw.specialization.plot
 ggsave("plots/fw.specialization.plot.pdf", fw.specialization.plot, width = 6.5, height = 5, scale = 1)
+
+# Repeat for hindwings
+forage <- read.csv("Wood.et.al.2019.forage.diversity.csv")
+
+# Make the species abbreviations (code names) match
+hw.worker.its$gdf$code.name <- as.character(hw.worker.its$gdf$species)
+# Both the forage and wing shape datasets use the same species abbreviations
+# e.g. "bimac" for B. bimaculatus
+
+# Filter out the foraging information that covers species not in our dataset
+x <- which(forage$code.name %in% unique(hw.worker.its$gdf$code.name))
+forage <- forage[x,]
+# All species in our dataset are covered by the foraging information
+# Filter out species in our dataset not covered by the foraging information
+x <- which(!(hw.worker.its$gdf$code.name %in% forage$code.name))
+unique(hw.worker.its$gdf$code.name[x])
+hw.frgls <- hw.worker.its$gdf # This object's name stands for "hindwing forage list"
+hw.frgls$specimen_id <- hw.frgls$specimen_id[-x]
+hw.frgls$coords <- hw.frgls$coords[,,-x]
+hw.frgls$body <- hw.frgls$body[-x]
+hw.frgls$its <- hw.frgls$its[-x]
+hw.frgls$species <- hw.frgls$species[-x]
+hw.frgls$hw.length <- hw.frgls$hw.length[-x]
+hw.frgls$PC1 <- hw.frgls$PC1[-x]
+hw.frgls$PC2 <- hw.frgls$PC2[-x]
+hw.frgls$alloPC1 <- hw.frgls$alloPC1[-x]
+hw.frgls$code.name <- hw.frgls$code.name[-x]
+
+# Add the foraging information to the wing GDF
+hw.worker.its$gdf$class <- hw.worker.its$gdf$code.name
+hw.worker.its$gdf$wood.dbs <- hw.worker.its$gdf$code.name
+hw.worker.its$gdf$richness <- hw.worker.its$gdf$code.name
+hw.worker.its$gdf$shannon <- hw.worker.its$gdf$code.name
+hw.worker.its$gdf$simpson <- hw.worker.its$gdf$code.name
+hw.worker.its$gdf$faith.pd <- hw.worker.its$gdf$code.name
+hw.worker.its$gdf$wood.PC1 <- hw.worker.its$gdf$code.name
+hw.worker.its$gdf$wood.PC2 <- hw.worker.its$gdf$code.name
+hw.worker.its$gdf$wood.PC3 <- hw.worker.its$gdf$code.name
+df <- forage[,-c(1:2)]
+colnames(df)[1] <- "class"
+row.names(df) <- forage$code.name
+
+for (i in 1:length(hw.worker.its$gdf$code.name)) {
+  hw.worker.its$gdf$class[i] <- df[hw.worker.its$gdf$code.name[i],"class"]
+  hw.worker.its$gdf$wood.dbs[i] <- df[hw.worker.its$gdf$code.name[i],"wood.dbs"]
+  hw.worker.its$gdf$richness[i] <- df[hw.worker.its$gdf$code.name[i],"richness"]
+  hw.worker.its$gdf$shannon[i] <- df[hw.worker.its$gdf$code.name[i],"shannon"]
+  hw.worker.its$gdf$simpson[i] <- df[hw.worker.its$gdf$code.name[i],"simpson"]
+  hw.worker.its$gdf$faith.pd[i] <- df[hw.worker.its$gdf$code.name[i],"faith.pd"]
+  hw.worker.its$gdf$wood.PC1[i] <- df[hw.worker.its$gdf$code.name[i],"wood.PC1"]
+  hw.worker.its$gdf$wood.PC2[i] <- df[hw.worker.its$gdf$code.name[i],"wood.PC2"]
+  hw.worker.its$gdf$wood.PC3[i] <- df[hw.worker.its$gdf$code.name[i],"wood.PC3"]
+}
+hw.worker.its$gdf$class <-  as.factor(hw.worker.its$gdf$class)
+hw.worker.its$gdf$wood.dbs <-  as.numeric(hw.worker.its$gdf$wood.dbs)
+hw.worker.its$gdf$richness <-  as.numeric(hw.worker.its$gdf$richness)
+hw.worker.its$gdf$shannon <-  as.numeric(hw.worker.its$gdf$shannon)
+hw.worker.its$gdf$simpson <-  as.numeric(hw.worker.its$gdf$simpson)
+hw.worker.its$gdf$faith.pd <-  as.numeric(hw.worker.its$gdf$faith.pd)
+hw.worker.its$gdf$wood.PC1 <-  as.numeric(hw.worker.its$gdf$wood.PC1)
+hw.worker.its$gdf$wood.PC2 <-  as.numeric(hw.worker.its$gdf$wood.PC2)
+hw.worker.its$gdf$wood.PC3 <-  as.numeric(hw.worker.its$gdf$wood.PC3)
+
+# Explore potential correlations
+x <- data.frame(
+  PC1 = unlist(hw.worker.its$gdf$PC1),
+  PC2 = unlist(hw.worker.its$gdf$PC2),
+  alloPC1 = unlist(hw.worker.its$gdf$alloPC1),
+  wood.dbs = unlist(hw.worker.its$gdf$wood.dbs),
+  richness = unlist(hw.worker.its$gdf$richness),
+  shannon = unlist(hw.worker.its$gdf$shannon),
+  simpson = unlist(hw.worker.its$gdf$simpson),
+  faith.pd = unlist(hw.worker.its$gdf$faith.pd),
+  wood.PC1 = unlist(hw.worker.its$gdf$wood.PC1),
+  wood.PC2 = unlist(hw.worker.its$gdf$wood.PC2),
+  wood.PC3 = unlist(hw.worker.its$gdf$wood.PC3)
+)
+
+pairs(x, cor.method = "spearman")
+# Correlations are generally weak to the diversity metrics.
+# The strongest correlations appear to be with PC1 and 
+# Wood's PC3 (0.39), followed by Faith's PD (0.20) 
+
+# Model the effect of foraging metrics on wing shape
+# Comparisons among these models can be made based on Z values (effect size)
+i <- 1e4-1
+hw.forage.its.lm <- procD.lm(coords ~ log(Csize), data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.its.lm)
+#             Df      SS        MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01988 0.0198831 0.03659 15.875 5.2571  1e-04 ***
+# Residuals  418 0.52354 0.0012525 0.96341                         
+# Total      419 0.54343 
+hw.forage.sp.lm <- procD.lm(coords ~ species, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.sp.lm)
+#            Df      SS        MS     Rsq      F      Z Pr(>F)    
+# species     9 0.18926 0.0210292 0.34828 24.345 15.469  1e-04 ***
+# Residuals 410 0.35416 0.0008638 0.65172                         
+# Total     419 0.54343  
+hw.forage.wood.dbs.lm <- procD.lm(coords ~ wood.dbs, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.wood.dbs.lm)
+#            Df      SS        MS     Rsq      F      Z Pr(>F)    
+# wood.dbs    1 0.02765 0.0276532 0.05229 22.403 5.8173  1e-04 ***
+# Residuals 406 0.50114 0.0012343 0.94771                         
+# Total     407 0.52880    
+hw.forage.richness.lm <- procD.lm(coords ~ richness, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.richness.lm)
+#            Df      SS        MS     Rsq      F      Z Pr(>F)    
+# richness    1 0.01558 0.0155792 0.02946 12.325 4.6187  1e-04 ***
+# Residuals 406 0.51322 0.0012641 0.97054                         
+# Total     407 0.52880 
+hw.forage.shannon.lm <- procD.lm(coords ~ shannon, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.shannon.lm) 
+#            Df      SS        MS     Rsq      F      Z Pr(>F)    
+# shannon     1 0.01615 0.0161524 0.03055 12.792 4.6824  1e-04 ***
+# Residuals 406 0.51264 0.0012627 0.96945                         
+# Total     407 0.52880      
+hw.forage.simpson.lm <- procD.lm(coords ~ simpson, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.simpson.lm)
+#            Df     SS        MS     Rsq      F      Z Pr(>F)    
+# simpson     1 0.0216 0.0215969 0.04084 17.288 5.2323  1e-04 ***
+# Residuals 406 0.5072 0.0012493 0.95916                         
+# Total     407 0.5288 
+hw.forage.faith.lm <- procD.lm(coords ~ faith.pd, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.faith.lm)
+#            Df      SS       MS     Rsq      F      Z Pr(>F)    
+# faith.pd    1 0.03366 0.033656 0.06365 27.597 6.2965  1e-04 ***
+# Residuals 406 0.49514 0.001220 0.93635                         
+# Total     407 0.52880
+hw.forage.wood.PC1.lm <- procD.lm(coords ~ wood.PC1, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.wood.PC1.lm)
+#            Df      SS        MS     Rsq      F      Z Pr(>F)    
+# wood.PC1    1 0.02431 0.0243094 0.04597 19.564 5.5574  1e-04 ***
+# Residuals 406 0.50449 0.0012426 0.95403                         
+# Total     407 0.52880 
+hw.forage.wood.PC2.lm <- procD.lm(coords ~ wood.PC2, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.wood.PC2.lm)
+#            Df      SS        MS     Rsq      F      Z Pr(>F)    
+# wood.PC2    1 0.01171 0.0117139 0.02215 9.1975 4.0783  1e-04 ***
+# Residuals 406 0.51708 0.0012736 0.97785                         
+# Total     407 0.52880 
+hw.forage.wood.PC3.lm <- procD.lm(coords ~ wood.PC3, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.forage.wood.PC3.lm)
+#            Df      SS       MS     Rsq      F      Z Pr(>F)    
+# wood.PC3    1 0.03763 0.037627 0.07116 31.102 6.5224  1e-04 ***
+# Residuals 406 0.49117 0.001210 0.92884                         
+# Total     407 0.52880 
+
+# How do these factors do in models with ITS?
+hw.size.size.sp.lm <- procD.lm(coords ~ log(Csize) + species, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.sp.lm)
+#             Df      SS       MS     Rsq      F       Z Pr(>F)    
+# log(Csize)   1 0.01988 0.019883 0.03659 24.486  6.2281  1e-04 ***
+# species      9 0.19143 0.021270 0.35226 26.193 15.4562  1e-04 ***
+# Residuals  409 0.33212 0.000812 0.61115                          
+# Total      419 0.54343  
+hw.size.size.wood.dbs.lm <- procD.lm(coords ~ log(Csize) + wood.dbs, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.wood.dbs.lm)
+#             Df      SS       MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01923 0.019234 0.03637 16.313 5.1110  1e-04 ***
+# wood.dbs     1 0.03204 0.032043 0.06060 27.177 6.2588  1e-04 ***
+# Residuals  405 0.47752 0.001179 0.90303                         
+# Total      407 0.52880 
+hw.size.size.richness.lm <- procD.lm(coords ~ log(Csize) + richness, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.richness.lm) 
+#             Df      SS        MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01923 0.0192338 0.03637 15.738 5.0388  1e-04 ***
+# richness     1 0.01461 0.0146146 0.02764 11.959 4.5756  1e-04 ***
+# Residuals  405 0.49495 0.0012221 0.93599                         
+# Total      407 0.52880 
+hw.size.size.shannon.lm <- procD.lm(coords ~ log(Csize) + shannon, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.shannon.lm) 
+#             Df      SS        MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01923 0.0192338 0.03637 15.787 5.0449  1e-04 ***
+# shannon      1 0.01612 0.0161234 0.03049 13.234 4.7794  1e-04 ***
+# Residuals  405 0.49344 0.0012184 0.93314                         
+# Total      407 0.52880  
+hw.size.size.simpson.lm <- procD.lm(coords ~ log(Csize) + simpson, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.simpson.lm)
+#             Df      SS        MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01923 0.0192338 0.03637 15.973 5.0686  1e-04 ***
+# simpson      1 0.02188 0.0218805 0.04138 18.171 5.3874  1e-04 ***
+# Residuals  405 0.48768 0.0012042 0.92225                         
+# Total      407 0.52880 
+hw.size.size.faith.lm <- procD.lm(coords ~ log(Csize) + faith.pd, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.faith.lm)
+#             Df      SS        MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01923 0.0192338 0.03637 16.112 5.0865  1e-04 ***
+# faith.pd     1 0.02609 0.0260938 0.04935 21.859 5.8533  1e-04 ***
+# Residuals  405 0.48347 0.0011937 0.91428                         
+# Total      407 0.52880 
+hw.size.size.wood.PC1.lm <- procD.lm(coords ~ log(Csize) + wood.PC1, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.wood.PC1.lm)
+#             Df      SS        MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01923 0.0192338 0.03637 15.997 5.0718  1e-04 ***
+# wood.PC1     1 0.02262 0.0226187 0.04277 18.812 5.5834  1e-04 ***
+# Residuals  405 0.48694 0.0012023 0.92085                         
+# Total      407 0.52880    
+hw.size.size.wood.PC2.lm <- procD.lm(coords ~ log(Csize) + wood.PC2, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.wood.PC2.lm)
+#             Df      SS        MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01923 0.0192338 0.03637 15.783 5.0436  1e-04 ***
+# wood.PC2     1 0.01601 0.0160115 0.03028 13.139 4.7465  1e-04 ***
+# Residuals  405 0.49355 0.0012186 0.93335                         
+# Total      407 0.52880  
+hw.size.size.wood.PC3.lm <- procD.lm(coords ~ log(Csize) + wood.PC3, data = hw.worker.its$gdf, iter = i, print.progress = FALSE)
+anova(hw.size.size.wood.PC3.lm)
+#             Df      SS       MS     Rsq      F      Z Pr(>F)    
+# log(Csize)   1 0.01923 0.019234 0.03637 16.787 5.1696  1e-04 ***
+# wood.PC3     1 0.04554 0.045539 0.08612 39.747 7.0856  1e-04 ***
+# Residuals  405 0.46402 0.001146 0.87751                         
+# Total      407 0.52880  
+
+# Recap of forage diversity factors (and species) by effect size
+#             Df      SS       MS      Rsq      F       Z Pr(>F)    
+# species      9 0.19143 0.021270  0.35226 26.193 15.4562  1e-04 ***
+# wood.PC3     1 0.04554 0.045539  0.08612 39.747  7.0856  1e-04 ***
+# wood.dbs     1 0.03204 0.032043  0.06060 27.177  6.2588  1e-04 ***
+# faith.pd     1 0.02609 0.0260938 0.04935 21.859  5.8533  1e-04 ***
+# wood.PC1     1 0.02262 0.0226187 0.04277 18.812  5.5834  1e-04 ***
+# simpson      1 0.02188 0.0218805 0.04138 18.171  5.3874  1e-04 ***
+# shannon      1 0.01612 0.0161234 0.03049 13.234  4.7794  1e-04 ***
+# wood.PC2     1 0.01601 0.0160115 0.03028 13.139  4.7465  1e-04 ***
+# richness     1 0.01461 0.0146146 0.02764 11.959  4.5756  1e-04 ***
+
+# A plot to show the relationship of Wood's DBS for forage data and wing shape
+plot(hw.worker.its$gdf$wood.dbs, hw.worker.its$gdf$PC1, col = (hw.worker.its$gdf$class))
+abline(lm(hw.worker.its$gdf$PC1 ~ hw.worker.its$gdf$wood.dbs))
+
+df <- data.frame(
+  species = hw.worker.its$gdf$species,
+  class = hw.worker.its$gdf$class,
+  wood.dbs = hw.worker.its$gdf$wood.dbs,
+  richness = hw.worker.its$gdf$richness,
+  shannon = hw.worker.its$gdf$shannon,
+  PC1 = hw.worker.its$gdf$PC1
+) %>% 
+  filter(!(species %in% c("rufo","san"))) %>% 
+  filter(!is.na(wood.dbs))
+
+{
+  species.order <- forage$species[order(forage$wood.dbs)]
+  df$species <- sub("bimac","bimaculatus",as.character(df$species))
+  df$species <- sub("bor","borealis",as.character(df$species))
+  df$species <- sub("ferv","fervidus",as.character(df$species))
+  df$species <- sub("imp","impatiens",as.character(df$species))
+  df$species <- sub("perp","perplexus",as.character(df$species))
+  df$species <- sub("tern","ternarius",as.character(df$species))
+  df$species <- sub("terri","terricola",as.character(df$species))
+  df$species <- sub("vag","vagans",as.character(df$species))
+  df$species <- factor(df$species, levels = species.order)
+  }
+
+txt.df <- df %>%
+  group_by(species) %>%
+  summarise(wood.dbs = median(wood.dbs),
+            .groups = "drop") %>%
+  mutate(
+    y =     c(0.053, 0.03, 0.04, 0.01, -0.01, 0.017, 0.058, 0.02),
+    hjust = c(0,     1,    0.5,  0,     0,    1,     0,     1)
+  )
+
+hw.specialization.plot <- df %>%
+  ggplot(aes(x = wood.dbs, y = PC1)) +
+  theme_bw() +
+  theme(legend.position="none") +
+  geom_smooth(method=lm, color = "grey40", fill = "gray85") +
+  geom_point(aes(color = species), alpha = 0.65, size = 2) +
+  scale_color_viridis(discrete = TRUE, end = 0.95) +
+  geom_text(data = txt.df, aes(x=wood.dbs, y=y, hjust=hjust,
+                               label = species, color = species)) +
+  annotate("text", x=15, y=-0.042, hjust = 0, vjust = 1,
+           color="grey40", size = 2.5,
+           label="permANOVA with residual randomization
+12 linear measurements of worker legs
+Y ~ log(Csize) Wood's dietary breadth score (DBS)
+  Csize: R^2 = 0.036, p < 10^-4
+  DBS:   R^2 = 0.061, p < 10^-4") +
+  labs(x="dietary breadth score (Wood et al. 2019 Ecology)",
+       y="hindwing shape (PC1)")
+
+hw.specialization.plot
+ggsave("plots/hw.specialization.plot.pdf", hw.specialization.plot, width = 6.5, height = 5, scale = 1)
 
 # Save everything
 save.image("bombus.scaling.rda")
