@@ -5,6 +5,10 @@
 # gc() 
 
 # devtools::install_github("aphanotus/borealis")
+x <- c("borealis","geomorph","tidyverse","ggpubr","phytools",
+       "RRPP","multcompView","rgl")
+invisible(lapply(x, require, character.only = TRUE))
+
 library(borealis)
 library(tidyverse)
 library(ggpubr)
@@ -117,7 +121,7 @@ scaling.plot(
   isometry.line = TRUE,
   convex.hulls = FALSE,
   groups.trendlines = TRUE,
-  save.as = "plots/scaling.forewing.v.its.jpg"
+  save.as = "plots/scaling.forewing.v.its.pdf"
 )
 #        group   n slope        p sig  ci.lo ci.hi spans.zero
 # 1       perp   5 0.942 9.21e-02 .   -0.284 2.170       TRUE
@@ -1014,4 +1018,3 @@ hw.worker.its$gdf$alloPC1 <- hw.its.lm.pca$x[,1]
 
 # Save everything
 save.image("bombus.scaling.rda")
-

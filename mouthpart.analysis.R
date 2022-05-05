@@ -5,23 +5,19 @@
 # gc() 
 
 # devtools::install_github("aphanotus/borealis")
-library(borealis)
-library(tidyverse)
-library(ggpubr)
-library(ggrepel)
-library(factoextra)
-library(viridis)
-library(RRPP)
-library(multcompView)
-library(ggbeeswarm)
-library(phytools)
-library(nlme)
+x <- c("borealis","tidyverse","ggpubr","ggrepel","factoextra","viridis",
+       "RRPP","multcompView","ggbeeswarm","phytools","nlme")
+invisible(lapply(x, require, character.only = TRUE))
 
 pairwise.group.comparisons <- function (pairwise.summary.output) {
   x <- pairwise.summary.output$summary.table[,4]
   names(x) <- sub(":","-",rownames(pairwise.summary.output$summary.table))
  return(multcompLetters(x))
 }
+
+####################
+# Import data
+####################
 
 # # Convert file
 # m <- read.mmm(
@@ -44,12 +40,13 @@ m <- read.csv('Bombus.mouthpart.measures.210412.csv')
 
 m <- m %>%
   mutate(
-    tongue = m01 + m03,
-    body = body / scale1,
-    its = its / scale2,
-    sp.caste = paste(species, caste, sep=".")
+    tongue = m01 + m03,    # Calculate tongue length
+    body = body / scale1,  # Calculate metric body length
+    its = its / scale2,    # Calculate metric intertegular span (ITS)
+    sp.caste = paste(species, caste, sep=".") # Create a factor combining species and caste
   ) %>%
-  select(-lm, -scale, -scale1, -scale2, -notes, -m10)
+  mutate(specimen_id = paste(specimen_id, sp.caste, sep=".")) %>% 
+  select(-scale, -scale1, -scale2, -notes, -m10)
 
 data.cols <- 2:15
 
@@ -61,11 +58,11 @@ w <- filter(m, caste == "W")
 ####################
 
 # Filter out low sample size (<3)
-barplot(sort(c(with(m, by(sp.caste, sp.caste, length)))))
-abline(h=c(3,10))
-barplot(sort(c(with(w, by(species, species, length)))))
-abline(h=c(3,10))
+barplot(sort(c(with(m, by(sp.caste, sp.caste, length)))), cex.names = 0.5)
+abline(h=c(3,10), col = "darkred")
 m <- m %>% group_by(sp.caste) %>% filter(n() >= 3)
+barplot(sort(c(with(w, by(species, species, length)))), cex.names = 0.5)
+abline(h=c(3,10), col = "darkred")
 w <- w %>% group_by(species) %>% filter(n() >= 3)
 
 scaling.plot(
@@ -76,7 +73,7 @@ scaling.plot(
   isometry.line = TRUE,
   convex.hulls = FALSE,
   groups.trendlines = TRUE,
-  save.as = "plots/scaling.tongue.v.body.png"
+  save.as = "plots/scaling.tongue.v.body.pdf"
 )
 #      group  n   slope        p sig   ci.lo  ci.hi spans.zero
 # 1    bor.W  6  1.1700 1.62e-02 *    0.3580 1.9900      FALSE
@@ -109,7 +106,7 @@ scaling.plot(
   isometry.line = TRUE,
   convex.hulls = FALSE,
   groups.trendlines = TRUE,
-  save.as = "plots/scaling.tongue.v.its.png"
+  save.as = "plots/scaling.tongue.v.its.pdf"
 )
 #      group  n   slope        p sig     ci.lo  ci.hi spans.zero
 # 1    bor.W  6  1.2400 1.26e-03 **    0.81500  1.670      FALSE
@@ -139,7 +136,7 @@ scaling.plot(
   isometry.line = TRUE,
   convex.hulls = FALSE,
   groups.trendlines = TRUE,
-  save.as = "plots/scaling.tongue.v.body.workers.png"
+  save.as = "plots/scaling.tongue.v.body.workers.pdf"
 )
 #   group  n   slope        p sig   ci.lo ci.hi spans.zero
 # 1   bor  6  1.1700 1.62e-02 *    0.3580 1.990      FALSE
@@ -163,7 +160,7 @@ k.w.tongue <- scaling.plot(
   include.legend = TRUE,
   isometry.line = TRUE,
   convex.hulls = TRUE,
-  save.as = "plots/scaling.tongue.v.its.workers.png"
+  save.as = "plots/scaling.tongue.v.its.workers.pdf"
 )
 k.w.tongue$plot
 k.w.tongue$slopes
@@ -181,31 +178,30 @@ k.w.tongue$slopes$group <- factor(k.w.tongue$slopes$group, levels = k.w.tongue$s
 
 ylimits <- sort(k.w.tongue$slopes$ci.lo)[2]
 ylimits <- c(ylimits, sort(k.w.tongue$slopes$ci.hi, decreasing = TRUE)[2])
-
-k.w.tongue$slopes %>% ggplot(aes(x=group, y=slope, fill=group)) +
-  theme_minimal() +
+ylimits[1] <- ylimits[1]*1.1
+k.w.tongue$slopes %>% ggplot(aes(x=group, y=slope, fill=group, label=paste0("n=",n))) +
+  theme_bw() +
   theme(legend.position="none") +
   geom_bar(stat="identity", color="grey15") +
   geom_errorbar(aes(ymin=ci.lo, ymax=ci.hi), width=.2) +
   geom_vline(xintercept = 2) +
   scale_fill_viridis(discrete = TRUE, option = "magma", begin = 0.15,  end = 0.85) +
+  geom_text(y=ylimits[1], size=3, color="grey50", vjust=1) +
   scale_y_continuous(limits=ylimits) +
   xlab("species") +
   ylab("scaling coefficent (k) for tongue vs. intertegular span")
-
-ggsave("plots/scaling.tongue.by.species.png", width = 6, height = 4, scale = 1)
 ggsave("plots/scaling.tongue.by.species.pdf", width = 6, height = 4, scale = 1)
 
 # PCA
 m.pca <- prcomp(m[,data.cols], center = TRUE, scale = TRUE)
 shape.space(m.pca, group = m$sp.caste, convex.hulls = TRUE,
-               save.as = "plots/mouthpart.morphospace.all.png")
+               save.as = "plots/mouthpart.morphospace.all.pdf")
 m$PC1 <- get_pca_ind(m.pca)$coord[,1]
 m$PC2 <- get_pca_ind(m.pca)$coord[,2]
 
 w.pca <- prcomp(w[,data.cols], center = TRUE, scale = TRUE)
 shape.space(w.pca, group = w$species, convex.hulls = TRUE,
-               save.as = "plots/mouthpart.morphospace.workers.png")
+               save.as = "plots/mouthpart.morphospace.workers.pdf")
 w$PC1 <- get_pca_ind(w.pca)$coord[,1]
 w$PC2 <- get_pca_ind(w.pca)$coord[,2]
 
@@ -221,7 +217,7 @@ scaling.plot(
   fixed.aspect = FALSE,
   groups.trendlines = TRUE,
   convex.hulls = FALSE,
-  save.as = "plots/worker.mouhtpart.PC1.v.its.png"
+  save.as = "plots/worker.mouhtpart.PC1.v.its.pdf"
 )
 
 # A quick plot of mouthpart "shape" (as PC1) by species
@@ -287,15 +283,13 @@ ggplot(w, aes(sp, PC1, color = sp)) +
   xlab("species") +
   ylab("PC1 for worker mouthpart measurements") +
   labs(caption = "Significant differences in the influence of species in the model  Y ~ intertegular span + species.\nPERMANOVA using `lm.rrpp`; contrasts using `pairwise` in the package `RRPP`.")
-
-ggsave("plots/worker.PC1.by.species.png", width = 6, height = 4, scale = 1)
 ggsave("plots/worker.PC1.by.species.pdf", width = 6, height = 4, scale = 1)
 
 # Allometry-corrected PCA
 w.allo.pca <- prcomp(resid(w.rrpp.size), center = TRUE, scale = TRUE)
 shape.space(w.allo.pca, group = w.list$species, convex.hulls = TRUE,
                main.title = "Size-corrected morphospace for worker mouthparts",
-               save.as = "plots/allo-corrected.pca.workers.png")
+               save.as = "plots/allo-corrected.pca.workers.pdf")
 w$alloPC1 <- get_pca_ind(w.allo.pca)$coord[,1]
 
 species.order <- w %>%
@@ -342,8 +336,6 @@ ggplot(w, aes(species, alloPC1, color = species)) +
   xlab("species") +
   ylab("size-corrected PC1 for worker mouthpart measures") +
   labs(caption = "Significant differences in the influence of species in the model  Y ~ intertegular span + species.\nPERMANOVA using `lm.rrpp`; contrasts using `pairwise` in the package `RRPP`.")
-
-ggsave("plots/size-corrected.worker.PC1.by.species.png", width = 6, height = 4, scale = 1.25)
 ggsave("plots/size-corrected.worker.PC1.by.species.pdf", width = 6, height = 4, scale = 1.25)
 
 # Do species have different worker mouthpart "shape" allometries?
@@ -400,7 +392,6 @@ w.rrpp.unique.allometries.pw <-
 
 # I confirmed with Michael Collyer that this modeling approach and use of 
 # rrpp::pairwise accomplishes what we're after here.
-
 
 ####################
 # PGLS
@@ -545,11 +536,12 @@ x$faith.pd <- unlist(wf$faith.pd)
 x$wood.PC1 <- unlist(wf$wood.PC1)
 x$wood.PC2 <- unlist(wf$wood.PC2)
 x$wood.PC3 <- unlist(wf$wood.PC3)
-pairs(x[,15:26], cor.method = "spearman")
+pairs(x[,c("PC1","PC2","alloPC1","wood.dbs","richness","shannon","simpson",
+           "faith.pd","wood.PC1","wood.PC2","wood.PC3")], 
+      cor.method = "spearman")
 # The strongest correlations appear to be with
-# PC1 and Simpson's diversity and Wood's DBS
-pairs(x[,c(16:18,27:29)], cor.method = "spearman")
-# Decent correlation between mouthpart PC1 and Wood's forage plant PC2
+# PC1 and Simpson's diversity (0.49), Wood's forage plant PC2 (0.47),
+# and Wood's DBS (0.42)
 
 # Model the affect of foraging metrics on mouthpart shape
 # Comparisons among these models can be made based on Z values (effect size)
@@ -646,21 +638,80 @@ anova(wf.wood.PC3.lm)
 # richness  1  0.00192    0.3867 -0.10806  0.5463  
 
 # How do these factors do in models with ITS?
-wf.its.woodPC2.lm <- lm.rrpp(mm ~ log(its) + wood.PC2, data = wf, iter = i, print.progress = FALSE)
-anova(wf.its.woodPC2.lm)
+wf.size.sp.lm <- lm.rrpp(mm ~ log(its) + species, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.sp.lm)
+#            Df      SS     MS     Rsq       F       Z Pr(>F)    
+# log(its)    1  96.316 96.316 0.37725 248.198  5.5726  1e-04 ***
+# species     6  83.322 13.887 0.32636  35.785 10.0512  1e-04 ***
+# Residuals 195  75.672  0.388 0.29639                           
+# Total     202 255.310     
+wf.size.wood.dbs.lm <- lm.rrpp(mm ~ log(its) + wood.dbs, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.wood.dbs.lm)
+#            Df      SS     MS     Rsq        F      Z Pr(>F)    
+# log(its)    1  96.316 96.316 0.37725 121.8737 4.8237  1e-04 ***
+# wood.dbs    1   0.935  0.935 0.00366   1.1832 0.6957 0.2764    
+# Residuals 200 158.059  0.790 0.61909                           
+# Total     202 255.310 
+wf.size.richness.lm <- lm.rrpp(mm ~ log(its) + richness, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.richness.lm) 
 #            Df      SS     MS     Rsq       F      Z Pr(>F)    
-# log(its)    1  96.316 96.316 0.37725 137.499 4.9485  1e-04 ***
-# wood.PC2    1  18.897 18.897 0.07402  26.977 3.2780  1e-04 ***
-# Residuals 200 140.097  0.700 0.54873                          
-# Total     202 255.310
-wf.its.simpson.lm <- lm.rrpp(mm ~ log(its) + simpson, data = wf, iter = i, print.progress = FALSE)
-anova(wf.its.simpson.lm)
+# log(its)    1  96.316 96.316 0.37725 121.898 4.8257  1e-04 ***
+# richness    1   0.967  0.967 0.00379   1.224 0.7241 0.2655    
+# Residuals 200 158.027  0.790 0.61896                          
+# Total     202 255.310    
+wf.size.shannon.lm <- lm.rrpp(mm ~ log(its) + shannon, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.shannon.lm) 
+#            Df      SS     MS     Rsq       F      Z Pr(>F)    
+# log(its)    1  96.316 96.316 0.37725 127.977 4.8758  1e-04 ***
+# shannon     1   8.473  8.473 0.03319  11.259 2.5314  0.001 ** 
+# Residuals 200 150.521  0.753 0.58956                          
+# Total     202 255.310 
+wf.size.simpson.lm <- lm.rrpp(mm ~ log(its) + simpson, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.simpson.lm)
 #            Df      SS     MS     Rsq       F      Z Pr(>F)    
 # log(its)    1  96.316 96.316 0.37725 130.724 4.8977  1e-04 ***
 # simpson     1  11.636 11.636 0.04558  15.793 2.7950  2e-04 ***
 # Residuals 200 147.358  0.737 0.57717                          
+# Total     202 255.310   
+wf.size.faith.lm <- lm.rrpp(mm ~ log(its) + faith.pd, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.faith.lm)
+#            Df      SS     MS     Rsq        F      Z Pr(>F)    
+# log(its)    1  96.316 96.316 0.37725 121.6362 4.8224  1e-04 ***
+# faith.pd    1   0.626  0.626 0.00245   0.7911 0.3746 0.3831    
+# Residuals 200 158.368  0.792 0.62029                           
+# Total     202 255.310      
+wf.size.wood.PC1.lm <- lm.rrpp(mm ~ log(its) + wood.PC1, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.wood.PC1.lm)
+#            Df      SS     MS     Rsq       F      Z Pr(>F)    
+# log(its)    1  96.316 96.316 0.37725 148.610 5.0303  1e-04 ***
+# wood.PC1    1  29.371 29.371 0.11504  45.318 3.7177  1e-04 ***
+# Residuals 200 129.623  0.648 0.50771                          
+# Total     202 255.310     
+wf.size.wood.PC2.lm <- lm.rrpp(mm ~ log(its) + wood.PC2, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.wood.PC2.lm)
+#            Df      SS     MS     Rsq       F      Z Pr(>F)    
+# log(its)    1  96.316 96.316 0.37725 137.499 4.9485  1e-04 ***
+# wood.PC2    1  18.897 18.897 0.07402  26.977 3.2780  1e-04 ***
+# Residuals 200 140.097  0.700 0.54873                          
 # Total     202 255.310  
-# They both still capture a large fraction of variance, even when accounting for size.
+wf.size.wood.PC3.lm <- lm.rrpp(mm ~ log(its) + wood.PC3, data = wf, iter = i, print.progress = FALSE)
+anova(wf.size.wood.PC3.lm)
+#            Df      SS     MS     Rsq        F      Z Pr(>F)    
+# log(its)    1  96.316 96.316 0.37725 121.5015 4.8205  1e-04 ***
+# wood.PC3    1   0.451  0.451 0.00177   0.5687 0.1264  0.466    
+# Residuals 200 158.543  0.793 0.62098                           
+# Total     202 255.310   
+
+# Recap of forage diversity factors (and species) by effect size
+#            Df      SS     MS     Rsq       F       Z Pr(>F)    
+# species     6  83.322 13.887 0.32636  35.785 10.0512  1e-04 ***
+# wood.PC1    1  29.371 29.371 0.11504  45.318  3.7177  1e-04 ***
+# wood.PC2    1  18.897 18.897 0.07402  26.977  3.2780  1e-04 ***
+# simpson     1  11.636 11.636 0.04558  15.793  2.7950  2e-04 ***
+# shannon     1   8.473  8.473 0.03319  11.259  2.5314  0.001 ** 
+
+# These factors still capture a large fraction of variance, 
+# even when accounting for size.
 
 # A plot to show the relationship of Wood's forage data and mouthpart morphology
 plot(wf$wood.PC2, wf$PC1, col = (wf$class))
@@ -717,8 +768,6 @@ Y ~ log(individual ITS) + species SDI for forage plants
        y="Mouthpart morphology (PC1)")
 
 specialization.plot
-
-ggsave("plots/specialization.plot.png", specialization.plot, width = 6.5, height = 5, scale = 1)
 ggsave("plots/specialization.plot.pdf", specialization.plot, width = 6.5, height = 5, scale = 1)
 
 # Save everything
