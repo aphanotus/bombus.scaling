@@ -1,0 +1,683 @@
+# Data provenance report
+
+ ## TPS file creation
+#
+Created by user `drangeli` with `borealis::create.tps` version 2022.10.27 on Sunday, 06 July 2025, 15:11:23
+#
+Input file:  Bombus.forewings.250706.csv
+#
+The dataset is 20 x 2 x 773 (*p* landmarks x *k* dimensions x *n* specimens)
+#
+Metadata are encoded in specimen ID lines from the following factors:
+- species
+- caste
+- digitizer
+- its.mm
+- body.length.mm
+#
+Metadata separator: __
+#
+**Scale** included and **inverted** from the original dataset.
+#
+
+
+## TPS data import
+
+Performed by user `drangeli` with `borealis::read.tps` version 2022.10.27 on Monday, 04 August 2025, 21:47:13
+
+Metadata were extracted from specimen ID lines for the following factors:
+- specimen.id
+- species
+- caste
+- digitizer
+- its.mm
+- body.length.mm
+
+
+## Data subset
+
+Performed by user `drangeli` with `borealis::subsetgmm` version 2022.10.27 on Monday, 04 August 2025, 21:47:39
+
+Accompanying metadata were subsetted from a `metadata` element with the following columns: `specimen.id``, `species``, `caste``, `digitizer``, `its.mm``, `body.length.mm`.
+
+
+## Reflection alignment
+
+Performed by user `drangeli` with `borealis::align.reflect` version 2022.10.27 on Monday, 04 August 2025, 21:50:00
+
+- top.pt = 2
+- bottom.pt = 20
+- left.pt = 13
+- right.pt = 1
+
+Specimens re-oriented: 567
+
+- DRA190815-001.vagans Y-flipped
+- DRA190815-002.impatiens Y-flipped
+- DRA190815-003.impatiens Y-flipped
+- DRA190815-004.impatiens Y-flipped
+- DRA190805-005.vagans Y-flipped
+- FJ190529-001.impatiens Y-flipped
+- FJ190716-008.bimaculatus Y-flipped
+- FJ190718-001.vagans Y-flipped
+- FJ190718-004.impatiens Y-flipped
+- FJ190724-003.terricola Y-flipped
+- FJ190809-002.ternarius Y-flipped
+- FJ190809-003.borealis Y-flipped
+- FJ190809-004.ternarius Y-flipped
+- FJ190809-005.ternarius Y-flipped
+- FJ190809-006.ternarius Y-flipped
+- FJ190809-007.ternarius Y-flipped
+- FJ190809-008.ternarius Y-flipped
+- FJ190809-009.ternarius Y-flipped
+- FJ190809-010.ternarius Y-flipped
+- FJ190809-012.ternarius Y-flipped
+- FJ190809-013.ternarius Y-flipped
+- FJ190809-014.ternarius Y-flipped
+- FJ190814-004.bimaculatus Y-flipped
+- FJ190814-007.impatiens Y-flipped
+- FJ190814-009.bimaculatus Y-flipped
+- FJ190822-001.impatiens Y-flipped
+- FJ190822-002.impatiens Y-flipped
+- FJ190822-003.impatiens Y-flipped
+- FJ190827-002.borealis Y-flipped
+- FJ190827-003.vagans Y-flipped
+- FJ190827-004.vagans Y-flipped
+- FJ190827-005.borealis Y-flipped
+- FJ190827-007.borealis Y-flipped
+- FJ190827-009.borealis Y-flipped
+- FJ190827-010.bimaculatus Y-flipped
+- FJ190827-011.vagans Y-flipped
+- FJ190827-013.bimaculatus Y-flipped
+- FJ190827-014.impatiens Y-flipped
+- FJ190827-015.impatiens Y-flipped
+- FJ190827-016.impatiens Y-flipped
+- FJ190827-017a.borealis Y-flipped
+- FJ190827-017b.ternarius Y-flipped
+- FJ190827-018.ternarius Y-flipped
+- FJ190827-019.ternarius Y-flipped
+- FJ190828-001.impatiens Y-flipped
+- FJ190828-002.impatiens Y-flipped
+- FJ190828-003.impatiens Y-flipped
+- FJ190905-001.impatiens Y-flipped
+- FJ190905-002.impatiens Y-flipped
+- FJ190905-003.impatiens Y-flipped
+- JL190724-001.terricola Y-flipped
+- JL190724-002.ternarius Y-flipped
+- JL190724-003.bimaculatus Y-flipped
+- JL190724-005.ternarius Y-flipped
+- JL190731-001.impatiens Y-flipped
+- JL190731-002.impatiens Y-flipped
+- JL190731-003.impatiens Y-flipped
+- JL190731-004.bimaculatus Y-flipped
+- JL190731-005.bimaculatus Y-flipped
+- JL190806-004.bimaculatus Y-flipped
+- JL190806-005.impatiens Y-flipped
+- JL190806-006.impatiens Y-flipped
+- JL190806-007.impatiens Y-flipped
+- JL190806-008.bimaculatus Y-flipped
+- JL190809-001.ternarius Y-flipped
+- JL190809-002.ternarius Y-flipped
+- JL190809-003.vagans Y-flipped
+- JL190809-004.ternarius Y-flipped
+- JL190809-005.vagans Y-flipped
+- JL190809-006.ternarius Y-flipped
+- JL190809-007.ternarius Y-flipped
+- JL190809-009.ternarius Y-flipped
+- JL190910-001.impatiens Y-flipped
+- PF190718-001.vagans Y-flipped
+- PF190724-004.impatiens Y-flipped
+- PF190724-005.ternarius Y-flipped
+- PF190724-008.bimaculatus Y-flipped
+- RGA190718-001.ternarius Y-flipped
+- TJ190529-001.impatiens Y-flipped
+- DRA190715-001.bimaculatus Y-flipped
+- MY180615-005.ternarius Y-flipped
+- MY180615-006.terricola Y-flipped
+- MY180615-009.bimaculatus Y-flipped
+- MY180615-013.terricola Y-flipped
+- MY180616-002.bimaculatus Y-flipped
+- MY180616-003.bimaculatus Y-flipped
+- MY180616-003a.bimaculatus Y-flipped
+- MY180616-004.ternarius Y-flipped
+- MY180814-003.vagans Y-flipped
+- MY180814-009.vagans Y-flipped
+- MY180814-014.ternarius Y-flipped
+- TWM180615-004.ternarius Y-flipped
+- TWM180615-009.bimaculatus Y-flipped
+- TWM180814-001.perplexus Y-flipped
+- TWM180814-017.ternarius Y-flipped
+- TWM180814-018.ternarius Y-flipped
+- DMO180529-005.vagans Y-flipped
+- DRA180529-012.vagans Y-flipped
+- DRA180529-024.vagans Y-flipped
+- DRA180814-001.vagans Y-flipped
+- DRA180814-006.impatiens Y-flipped
+- DRA180814-006a.vagans Y-flipped
+- FJ180603-006.bimaculatus Y-flipped
+- TWM180614-160.terricola Y-flipped
+- TWM180614-161.vagans Y-flipped
+- TWM180614-163.vagans Y-flipped
+- TWM180614-167.vagans Y-flipped
+- TWM180615-006.terricola Y-flipped
+- TWM180621-002.bimaculatus Y-flipped
+- TWM180621-003.bimaculatus Y-flipped
+- TWM180622-002.bimaculatus Y-flipped
+- TWM180626-002.bimaculatus Y-flipped
+- TWM180626-004.bimaculatus Y-flipped
+- TWM180626-005.bimaculatus Y-flipped
+- TWM180626-006.ternarius Y-flipped
+- TWM180626-007.ternarius Y-flipped
+- TWM180626-008.vagans Y-flipped
+- TWM180626-009.vagans Y-flipped
+- TWM180626-010.vagans Y-flipped
+- TWM180629-001.borealis Y-flipped
+- TWM180629-003.vagans Y-flipped
+- TWM180629-005.ternarius Y-flipped
+- TWM180629-006.bimaculatus Y-flipped
+- TWM180629-007.bimaculatus Y-flipped
+- TWM180629-008.vagans Y-flipped
+- TWM180703-001.terricola Y-flipped
+- TWM180703-002.ternarius Y-flipped
+- TWM180703-003.ternarius Y-flipped
+- TWM180703-004.borealis Y-flipped
+- TWM180703-005.borealis Y-flipped
+- TWM180703-006.ternarius Y-flipped
+- MY180626-008.vagans Y-flipped
+- MY180629-001.vagans Y-flipped
+- MY180629-002.vagans Y-flipped
+- MY180629-003.vagans Y-flipped
+- MY180629-004.vagans Y-flipped
+- MY180703-002.terricola Y-flipped
+- MY180703-003.terricola Y-flipped
+- AOI190709-001.borealis Y-flipped
+- AOI190715-001.impatiens Y-flipped
+- DRA180619-004.bimaculatus Y-flipped
+- DRA180720-001.vagans Y-flipped
+- DRA180720-002.vagans Y-flipped
+- DRA180720-003.vagans Y-flipped
+- DRA180720-004.vagans Y-flipped
+- DRA180720-006.bimaculatus Y-flipped
+- DRA180720-005.vagans Y-flipped
+- DRA180720-009.borealis Y-flipped
+- DRA180720-010.borealis Y-flipped
+- DRA180814-017.impatiens Y-flipped
+- DRA190709-001.vagans Y-flipped
+- DRA190709-003.bimaculatus Y-flipped
+- DRA190709-004.impatiens Y-flipped
+- DRA190709-005.impatiens Y-flipped
+- DRA190709-006.vagans Y-flipped
+- DRA190709-008.vagans Y-flipped
+- DRA190709-010.bimaculatus Y-flipped
+- DRA190709-011.bimaculatus Y-flipped
+- DRA190709-012.bimaculatus Y-flipped
+- DRA190709-013.vagans Y-flipped
+- DRA190709-014.vagans Y-flipped
+- DRA190709-015.terricola Y-flipped
+- FJ170607-006.vagans Y-flipped
+- FJ170617-035.borealis Y-flipped
+- FJ170624-002.impatiens Y-flipped
+- FJ170624-004.impatiens Y-flipped
+- FJ170624-005.impatiens Y-flipped
+- FJ170703-038.vagans Y-flipped
+- FJ170703-039.bimaculatus Y-flipped
+- FJ170703-041.ternarius Y-flipped
+- FJ170703-042.impatiens Y-flipped
+- FJ170703-044.impatiens Y-flipped
+- FJ170703-045.bimaculatus Y-flipped
+- FJ170703-045a.bimaculatus Y-flipped
+- FJ170703-048.ternarius Y-flipped
+- FJ170706-007.vagans Y-flipped
+- FJ170706-008.vagans Y-flipped
+- FJ170709-051.borealis Y-flipped
+- FJ170709-063.borealis Y-flipped
+- FJ170709-064.bimaculatus Y-flipped
+- FJ170709-066.bimaculatus Y-flipped
+- FJ170712-009.borealis Y-flipped
+- FJ170712-011.borealis Y-flipped
+- FJ170712-018.vagans Y-flipped
+- FJ170712-020.vagans Y-flipped
+- FJ170712-071.bimaculatus Y-flipped
+- FJ170722-031.vagans Y-flipped
+- FJ170723-032.bimaculatus Y-flipped
+- FJ170727-030.bimaculatus Y-flipped
+- FJ170804-081.bimaculatus Y-flipped
+- FJ170830-162.vagans Y-flipped
+- FJ170830-166.vagans Y-flipped
+- FJ170830-169.borealis Y-flipped
+- FJ170830-169a.vagans Y-flipped
+- FJ180607-004.bimaculatus Y-flipped
+- FJ180607-005.bimaculatus Y-flipped
+- FJ180619-009.bimaculatus Y-flipped
+- FJ180619-014.vagans Y-flipped
+- FJ190610-013.vagans Y-flipped
+- FJ190612-001.bimaculatus Y-flipped
+- FJ190612-002.impatiens Y-flipped
+- FJ190612-003.impatiens Y-flipped
+- FJ190619-003.ternarius Y-flipped
+- FJ190619-004.ternarius Y-flipped
+- FJ190619-005.bimaculatus Y-flipped
+- FJ190619-006.terricola Y-flipped
+- FJ190619-007.ternarius Y-flipped
+- FJ190619-008.bimaculatus Y-flipped
+- FJ190619-009.terricola Y-flipped
+- FJ190619-010.ternarius Y-flipped
+- FJ190621-001.bimaculatus Y-flipped
+- FJ190621-002.ternarius Y-flipped
+- FJ190627-001.bimaculatus Y-flipped
+- FJ190627-002.bimaculatus Y-flipped
+- FJ190627-004.impatiens Y-flipped
+- FJ190627-005.impatiens Y-flipped
+- FJ190628-001.bimaculatus Y-flipped
+- FJ190628-002.terricola Y-flipped
+- FJ190628-004.bimaculatus Y-flipped
+- FJ190628-005.bimaculatus Y-flipped
+- FJ190628-006.ternarius Y-flipped
+- FJ190628-008.bimaculatus Y-flipped
+- FJ190628-009.bimaculatus Y-flipped
+- FJ190628-011.bimaculatus Y-flipped
+- FJ190628-003.bimaculatus Y-flipped
+- FJ190628-012.bimaculatus Y-flipped
+- FJ190628-013.bimaculatus Y-flipped
+- FJ190628-014.ternarius Y-flipped
+- FJ190703-001.vagans Y-flipped
+- FJ190703-002.vagans Y-flipped
+- FJ190703-005.bimaculatus Y-flipped
+- FJ190703-006.vagans Y-flipped
+- FJ190703-007.vagans Y-flipped
+- FJ190703-008.vagans Y-flipped
+- FJ190703-009.perplexus Y-flipped
+- FJ190703-010.ternarius Y-flipped
+- FJ190703-012.vagans Y-flipped
+- FJ190703-013.impatiens Y-flipped
+- FJ190705-001.bimaculatus Y-flipped
+- FJ190705-002.bimaculatus Y-flipped
+- FJ190705-004.bimaculatus Y-flipped
+- FJ190705-005.impatiens Y-flipped
+- FJ190705-006.impatiens Y-flipped
+- FJ190709-001.vagans Y-flipped
+- FJ190709-002.borealis Y-flipped
+- FJ190709-003.borealis Y-flipped
+- FJ190709-004.bimaculatus Y-flipped
+- FJ190709-005.bimaculatus Y-flipped
+- FJ190709-006.bimaculatus Y-flipped
+- FJ190709-007.bimaculatus Y-flipped
+- FJ190709-008.impatiens Y-flipped
+- FJ190709-009.vagans Y-flipped
+- FJ190709-010.bimaculatus Y-flipped
+- FJ190709-011.vagans Y-flipped
+- FJ190709-012.bimaculatus Y-flipped
+- FJ190710-001.bimaculatus Y-flipped
+- FJ190710-003.impatiens Y-flipped
+- FJ190710-004.impatiens Y-flipped
+- FJ190711-009.ternarius Y-flipped
+- FJ190711-010.impatiens Y-flipped
+- FJ190715-002.impatiens Y-flipped
+- FJ190716-001.ternarius Y-flipped
+- FJ190716-002.ternarius Y-flipped
+- FJ190716-003.perplexus Y-flipped
+- FJ190716-004.bimaculatus Y-flipped
+- FJ190716-005.bimaculatus Y-flipped
+- FJ190716-006.bimaculatus Y-flipped
+- FJ190716-007.bimaculatus Y-flipped
+- FJ190716-009.impatiens Y-flipped
+- FJ190716-011.ternarius Y-flipped
+- FJ190716-012.bimaculatus Y-flipped
+- FJ190716-013.bimaculatus Y-flipped
+- FJ190718-002.perplexus Y-flipped
+- FJ190718-003.perplexus Y-flipped
+- FJ190718-005.terricola Y-flipped
+- FJ190724-002.terricola Y-flipped
+- FJ190724-004.bimaculatus Y-flipped
+- FJ190724-005.bimaculatus Y-flipped
+- FJ190724-006.ternarius Y-flipped
+- FJ190814-006.impatiens Y-flipped
+- FJ190814-008.impatiens Y-flipped
+- HFN190709-002.vagans Y-flipped
+- JG170712-015.bimaculatus Y-flipped
+- JG170712-016b.bimaculatus Y-flipped
+- JG170712-026.ternarius Y-flipped
+- JG170712-026b.vagans Y-flipped
+- JG170712-014.vagans Y-flipped
+- JG170712-027.vagans Y-flipped
+- JG170712-028.borealis Y-flipped
+- JG170712-047.vagans Y-flipped
+- JG170712-049.borealis Y-flipped
+- JG170712-050.bimaculatus Y-flipped
+- JG170712-058.perplexus Y-flipped
+- JG170712-062.vagans Y-flipped
+- JG170712-063.bimaculatus Y-flipped
+- JG190804-035.terricola Y-flipped
+- JG170804-073.bimaculatus Y-flipped
+- JG170804-074.bimaculatus Y-flipped
+- JG170804-076.ternarius Y-flipped
+- JG170804-077.ternarius Y-flipped
+- JG170804-078.impatiens Y-flipped
+- JL190612-001.bimaculatus Y-flipped
+- JL190619-001.ternarius Y-flipped
+- JL190619-002.ternarius Y-flipped
+- JL190619-006.borealis Y-flipped
+- JL190619-007.ternarius Y-flipped
+- JL190619-008.terricola Y-flipped
+- JL190619-009.bimaculatus Y-flipped
+- JL190619-010.ternarius Y-flipped
+- JL190627-001.bimaculatus Y-flipped
+- JL190627-002.impatiens Y-flipped
+- JL190628-001.ternarius Y-flipped
+- JL190628-002.terricola Y-flipped
+- JL190628-005.bimaculatus Y-flipped
+- JL190628-006.terricola Y-flipped
+- JL190703-002.vagans Y-flipped
+- JL190703-003.bimaculatus Y-flipped
+- JL190703-004a.bimaculatus Y-flipped
+- JL190703-004b.vagans Y-flipped
+- JL190703-005.ternarius Y-flipped
+- JL190703-006.ternarius Y-flipped
+- JL190703-007.bimaculatus Y-flipped
+- JL190703-008.bimaculatus Y-flipped
+- JL190703-009.terricola Y-flipped
+- JL190703-010.terricola Y-flipped
+- JL190703-011.ternarius Y-flipped
+- JL190703-013.bimaculatus Y-flipped
+- JL190705-003.impatiens Y-flipped
+- JL190710-001.perplexus Y-flipped
+- JL190710-002.impatiens Y-flipped
+- JL190710-005.vagans Y-flipped
+- JL190711-001.ternarius Y-flipped
+- JL190711-002.ternarius Y-flipped
+- JL190711-004.terricola Y-flipped
+- JL190711-005.terricola Y-flipped
+- JL190711-006.terricola Y-flipped
+- JL190716-001.ternarius Y-flipped
+- JL190716-002.ternarius Y-flipped
+- JL190716-003.vagans Y-flipped
+- JL190716-004.impatiens Y-flipped
+- JL190716-005a.bimaculatus Y-flipped
+- JL190716-006.ternarius Y-flipped
+- JL190716-007.ternarius Y-flipped
+- JL190716-008.ternarius Y-flipped
+- JL190716-009.ternarius Y-flipped
+- JL190716-011.impatiens Y-flipped
+- JL190716-012.impatiens Y-flipped
+- JL190724-004.ternarius Y-flipped
+- JL190724-006.vagans Y-flipped
+- JMS190709-001.vagans Y-flipped
+- LMB190709-001.vagans Y-flipped
+- LMB190715-001.bimaculatus Y-flipped
+- MM190709-001.vagans Y-flipped
+- MPS180619-010.impatiens Y-flipped
+- MPS180619-011.impatiens Y-flipped
+- MPS180619-012.bimaculatus Y-flipped
+- MPS180619-013.bimaculatus Y-flipped
+- MT190709-001.vagans Y-flipped
+- MY180615-001.bimaculatus Y-flipped
+- MY180615-007.terricola Y-flipped
+- MY180615-011.bimaculatus Y-flipped
+- MY180619-001.vagans Y-flipped
+- MY180619-005.vagans Y-flipped
+- MY180619-020.bimaculatus Y-flipped
+- MY180619-022.bimaculatus Y-flipped
+- MY180621-001.bimaculatus Y-flipped
+- MY180621-005.impatiens Y-flipped
+- MY180622-002.bimaculatus Y-flipped
+- MY180622-003.bimaculatus Y-flipped
+- MY180622-005.ternarius Y-flipped
+- MY180626-001.vagans Y-flipped
+- MY180626-002.ternarius Y-flipped
+- MY180626-004.bimaculatus Y-flipped
+- MY180626-005.ternarius Y-flipped
+- MY180626-006.ternarius Y-flipped
+- MY180626-007.bimaculatus Y-flipped
+- MY180703-004.terricola Y-flipped
+- MY180703-005.terricola Y-flipped
+- MY180703-007.impatiens Y-flipped
+- MY180703-008.vagans Y-flipped
+- MY180711-001.bimaculatus Y-flipped
+- MY180711-003.bimaculatus Y-flipped
+- MY180711-004.bimaculatus Y-flipped
+- MY180719-001.ternarius Y-flipped
+- MY180719-002.ternarius Y-flipped
+- MY180719-003.impatiens Y-flipped
+- MY180719-004.impatiens Y-flipped
+- MY180719-005.ternarius Y-flipped
+- MY180719-006.bimaculatus Y-flipped
+- MY180719-007.ternarius Y-flipped
+- MY180731-001.vagans Y-flipped
+- MY180731-003.vagans Y-flipped
+- MY180802-001.vagans Y-flipped
+- MY180802-002.borealis Y-flipped
+- MY180802-004.ternarius Y-flipped
+- MY180802-006.ternarius Y-flipped
+- MY180802-007.ternarius Y-flipped
+- MY180814-010.vagans Y-flipped
+- MY190612-001.bimaculatus Y-flipped
+- MY190619-002.bimaculatus Y-flipped
+- MY190619-003.ternarius Y-flipped
+- MY190621-001.bimaculatus Y-flipped
+- MY190621-002.bimaculatus Y-flipped
+- PF190610-014.vagans Y-flipped
+- PF190610-015.vagans Y-flipped
+- PF190709-001.vagans Y-flipped
+- PF190709-002.vagans Y-flipped
+- PF190709-005.impatiens Y-flipped
+- PF190709-007.vagans Y-flipped
+- PF190709-008.bimaculatus Y-flipped
+- PF190709-009.bimaculatus Y-flipped
+- PF190724-001.bimaculatus Y-flipped
+- PF190724-002.impatiens Y-flipped
+- PF190724-003.impatiens Y-flipped
+- PF190724-006.vagans Y-flipped
+- PRM190709-001.borealis Y-flipped
+- PS170709-067.bimaculatus Y-flipped
+- TWM180614-001.impatiens Y-flipped
+- TWM180614-003.impatiens Y-flipped
+- TWM180614-010.borealis Y-flipped
+- TWM180614-012.vagans Y-flipped
+- TWM180614-013.vagans Y-flipped
+- TWM180614-019.vagans Y-flipped
+- TWM180614-033.borealis Y-flipped
+- TWM180614-034.borealis Y-flipped
+- TWM180614-040.impatiens Y-flipped
+- TWM180614-054.bimaculatus Y-flipped
+- TWM180614-055.impatiens Y-flipped
+- TWM180614-059.bimaculatus Y-flipped
+- TWM180614-061.bimaculatus Y-flipped
+- TWM180614-064.vagans Y-flipped
+- TWM180614-068.bimaculatus Y-flipped
+- TWM180614-070.terricola Y-flipped
+- TWM180614-072.bimaculatus Y-flipped
+- TWM180614-079.borealis Y-flipped
+- TWM180614-082.terricola Y-flipped
+- TWM180711-001.bimaculatus Y-flipped
+- TWM180711-002.bimaculatus Y-flipped
+- TWM180711-003.bimaculatus Y-flipped
+- TWM180711-005.bimaculatus Y-flipped
+- TWM180711-006.bimaculatus Y-flipped
+- TWM180711-014.impatiens Y-flipped
+- TWM180719-001.impatiens Y-flipped
+- TWM180719-003.bimaculatus Y-flipped
+- TWM180719-004.ternarius Y-flipped
+- TWM180719-005.ternarius Y-flipped
+- TWM180719-006.ternarius Y-flipped
+- TWM180719-007.ternarius Y-flipped
+- TWM180724-001.vagans Y-flipped
+- TWM180724-003.borealis Y-flipped
+- TWM180724-010.bimaculatus Y-flipped
+- TWM180724-012.borealis Y-flipped
+- TWM180724-018.vagans Y-flipped
+- TWM180724-020.vagans Y-flipped
+- TWM180724-022.vagans Y-flipped
+- TWM180724-026b.perplexus Y-flipped
+- TWM180724-027.borealis Y-flipped
+- TWM180724-028.ternarius Y-flipped
+- TWM180731-002.impatiens Y-flipped
+- TWM180731-003.impatiens Y-flipped
+- TWM180731-004.impatiens Y-flipped
+- TWM180802-002.vagans Y-flipped
+- TWM180802-002b.vagans Y-flipped
+- TWM180802-003.ternarius Y-flipped
+- TWM180802-003b.vagans Y-flipped
+- TWM180802-005.ternarius Y-flipped
+- TWM180802-006.borealis Y-flipped
+- TWM180802-007.ternarius Y-flipped
+- TWM180802-008.ternarius Y-flipped
+- TWM180802-009.ternarius Y-flipped
+- TWM180802-010.ternarius Y-flipped
+- TWM180808-003.borealis Y-flipped
+- TWM180814-002.borealis Y-flipped
+- TWM180814-015.vagans Y-flipped
+- TWM180814-016.impatiens Y-flipped
+- CAP220712-009.borealis X-flipped
+- CAP220712-010.borealis X-flipped
+- CAP220712-014.borealis X-flipped
+- CAP220712-017.vagans X-flipped
+- DRA220617-015.ternarius X-flipped
+- DRA220717-001.borealis X-flipped
+- DRA220721-001.vagans X-flipped
+- OW220614-015.griseocollis X-flipped
+- OW220620-004.griseocollis X-flipped
+- OW220620-005.griseocollis X-flipped
+- OW220620-006.griseocollis X-flipped
+- OW220620-007.terricola X-flipped
+- OW220621-003b.griseocollis X-flipped
+- OW220621-004.griseocollis X-flipped
+- OW220621-005.griseocollis X-flipped
+- OW220629-001.griseocollis X-flipped
+- OW220629-011.perplexus X-flipped
+- OW220708-006a.griseocollis X-flipped
+- OW220708-010.griseocollis X-flipped
+- OW220714-002.griseocollis X-flipped
+- OW220714-005.griseocollis X-flipped
+- OW220714-008.griseocollis X-flipped
+- OW220720-001.terricola X-flipped
+- OW220720-004.griseocollis X-flipped
+- OW220720-011.terricola X-flipped
+- OW220720-012.terricola X-flipped
+- OW220720-016.ternarius X-flipped
+- DRA170708-901.perplexus X-flipped
+- DRA170708-902.perplexus X-flipped
+- OW220616-004.impatiens X-flipped
+- OW220616-005.bimaculatus X-flipped
+- OW220616-007.bimaculatus X-flipped
+- OW220616-008.bimaculatus X-flipped
+- OW220621-003a.bimaculatus X-flipped
+- OW220616-001.bimaculatus X-flipped
+- ASD230630-001.impatiens X-flipped
+- ASD230630-001.impatiens Y-flipped
+- CAP220712-004.vagans X-flipped
+- CAP220712-004.vagans Y-flipped
+- DPD230713-001.borealis X-flipped
+- DPD230713-001.borealis Y-flipped
+- DRA170916-004a.impatiens Y-flipped
+- DRA170916-005.impatiens X-flipped
+- DRA170916-005.impatiens Y-flipped
+- DRA210812-005.perplexus X-flipped
+- DRA210812-005.perplexus Y-flipped
+- GSM220614-001.vagans X-flipped
+- GSM220614-001.vagans Y-flipped
+- JL190711-007.bimaculatus X-flipped
+- JL190711-007.bimaculatus Y-flipped
+- MEM230726-003.impatiens X-flipped
+- MEM230726-003.impatiens Y-flipped
+- MEM230802-001.impatiens X-flipped
+- MEM230802-001.impatiens Y-flipped
+- MEM230802-003.impatiens X-flipped
+- MEM230802-003.impatiens Y-flipped
+- MEM230802-011.impatiens X-flipped
+- MEM230802-011.impatiens Y-flipped
+- MEM230809-001.impatiens X-flipped
+- MEM230809-001.impatiens Y-flipped
+- NNK230713-001.vagans X-flipped
+- NNK230713-001.vagans Y-flipped
+- NNK230730-003.vagans Y-flipped
+- OW220614-012.bimaculatus X-flipped
+- OW220614-012.bimaculatus Y-flipped
+- RLR230713-001.vagans Y-flipped
+- AAL230713-001.vagans X-flipped
+- AAL230713-001.vagans Y-flipped
+- ASD230713-001.vagans Y-flipped
+- DRA170916-001.impatiens X-flipped
+- DRA170916-001.impatiens Y-flipped
+- DRA170916-004b.impatiens Y-flipped
+- DRA230713-001.borealis Y-flipped
+- ESL230713-001.borealis X-flipped
+- ESL230713-001.borealis Y-flipped
+- FJ190711-002.ternarius X-flipped
+- FJ190711-002.ternarius Y-flipped
+- FJ19071-003.ternarius Y-flipped
+- FJ190711-005.ternarius X-flipped
+- FJ190711-005.ternarius Y-flipped
+- FJ190711-008.ternarius X-flipped
+- FJ190711-008.ternarius Y-flipped
+- JAL230713-001.borealis X-flipped
+- JAL230713-001.borealis Y-flipped
+- JAL230713-002.vagans X-flipped
+- JAL230713-002.vagans Y-flipped
+- JAL230713-003.vagans Y-flipped
+- JL190711-003.terricola Y-flipped
+- MEM230630-007.impatiens X-flipped
+- MEM230630-007.impatiens Y-flipped
+- MEM230726-001.impatiens Y-flipped
+- MEM230726-002.impatiens Y-flipped
+- MEM230802-014.impatiens Y-flipped
+- NNK230713-002.vagans Y-flipped
+- OW220708-003.bimaculatus Y-flipped
+- OW220708-006b.impatiens X-flipped
+- OW220708-006b.impatiens Y-flipped
+- OW220708-009.bimaculatus X-flipped
+- OW220708-009.bimaculatus Y-flipped
+- OW220708-011.bimaculatus Y-flipped
+- ASD230629-001.borealis Y-flipped
+- DRA230629-001.borealis Y-flipped
+- FJ190711-001b.terricola X-flipped
+- FJ190711-001b.terricola Y-flipped
+- LSK230629-001.vagans Y-flipped
+- MEM230629-003.borealis Y-flipped
+- MEM230630-005.impatiens Y-flipped
+- NNK230629-001.impatiens Y-flipped
+- OW220708-008.bimaculatus X-flipped
+- OW220708-008.bimaculatus Y-flipped
+- REA230629-002.vagans Y-flipped
+- OW220708-002.ternarius Y-flipped
+- OW220614-008.vagans Y-flipped
+- MEM230630-009.griseocollis Y-flipped
+- MEM230630-002.griseocollis X-flipped
+- MEM230630-002.griseocollis Y-flipped
+- MEM230629-002.vagans X-flipped
+- HHW230629-001.vagans Y-flipped
+- FJ190711-004.terricola Y-flipped
+- DRA210812-012.perplexus Y-flipped
+
+
+## Generalized Procrustes analysis
+
+Performed by user `drangeli` with `borealis::align.procrustes` version 2022.10.27 on Monday, 04 August 2025, 21:50:03
+
+
+## Geomorph data frame conversion
+
+Performed by user `drangeli` with `borealis::listed.gdf` version 2022.10.27 on Monday, 04 August 2025, 21:50:03
+
+Current data structure:
+- gdf
+  - specimen.id
+  - species
+  - caste
+  - digitizer
+  - its.mm
+  - body.length.mm
+  - forewing.length.mm
+  - coords
+  - Csize
+- landmark.number
+- specimen.number
+- scaled
+- provenance
+- consensus
+
+ ## Data provenance report
+
+
+Generated by user `drangeli` with `borealis::write.provenance` version 2022.10.27 on Monday, 04 August 2025, 21:50:07
+
+
